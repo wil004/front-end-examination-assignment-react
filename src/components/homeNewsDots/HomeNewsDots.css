@@ -1,0 +1,21 @@
+.homeNewsDots {
+    display: flex;
+    justify-content: center;
+
+}
+
+.homeNewsDotButton {
+    height: 15px;
+    width: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 7px;
+}
+
+#homeNewsDotButtonClicked {
+    height: 15px;
+    width: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+}

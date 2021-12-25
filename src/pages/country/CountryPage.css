@@ -1,0 +1,44 @@
+#mainNews {
+    border: 5px solid rgba(0,0,0, 0.7);
+    width: 60%;
+    margin: 10px auto;
+    text-align: center;
+    position: relative;
+    top: 100px;
+    z-index: 0;
+    background-color: rgba(54, 79, 8, 0.6);
+    border-radius: 30px;
+}
+
+.news {
+    border: 5px solid rgba(0,0,0,0.6);
+    border-radius: 70px;
+    width: 50%;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: rgba(92,106,110,0.7);
+}
+
+.newsImage {
+    width: 40%;
+    height: 30%;
+}
+
+.chosenCountryName {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    background-color: rgba(68, 37, 10, 0.5);
+    color: #48cbe1;
+    font-size: 40px;
+    font-family: Algerian;
+}
+
+.goBackButton {
+    position: relative;
+    top: 80px;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    margin-left: 80%;
+    cursor: pointer;
+}

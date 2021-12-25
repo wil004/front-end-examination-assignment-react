@@ -1,0 +1,46 @@
+ #mainNav {
+     height: 75px;
+     position: fixed;
+     background-color: rgba(100,100,100,0.7);
+     width: 100%;
+     top: 0px;
+     z-index: 1;
+ }
+
+ .navContent {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: 0 40px;
+ }
+
+ .unfoldButton {
+     height: 20%;
+     cursor: pointer;
+     border-radius: 20px;
+     background-color: #5c6a6e;
+ }
+
+.navMenu {
+    position: relative;
+    background-color: #5c6a6e;
+    width: 160px;
+    padding: 10px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+ .navMenuOption {
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     margin: 15px;
+     background-color: rgba(0,0,0, 0.2);
+     border-radius: 30px;
+ }
+
+ .navMenuOption p{
+     font-size: 20px;
+     margin-right: 10px;
+ }
+
