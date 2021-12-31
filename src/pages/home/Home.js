@@ -1,67 +1,51 @@
 import React, {useEffect, useState} from "react";
-import axios from "axios";
 import './Home.css'
-import PreviousNextButton from "../../components/PreviousNextButton/PreviousNextButton";
-import HomeNewsDots from "../../components/homeNewsDots/HomeNewsDots";
+
 
 function Home () {
-    const newsToken = 'ct8nK1YSjbQaodqF9QpRKggxZXeRbHzVuWxRS8IY'
-    const [news, setNews] = useState([]);
-    const [newsNumber, setNewsNumber] = useState(0);
 
-    useEffect(() => {
-        async function fetchData () {
-            try {
-                    const result = await axios.get(`https://api.thenewsapi.com/v1/news/all?api_token=${newsToken}&language=en`)
-                    setNews(result.data.data);
-            }
-            catch (e) {
-                console.error(e);
-            }
-        }
-        fetchData()
-    }, [])
 
-if(news.length > 0) {
-    console.log(news[newsNumber])
-}
+
     return (
         <main className="homePage">
-            {news.length > 0 && <section className="homePageNews">
-                <div className="homePageNewsDiv" style={{backgroundImage: `url(${news[newsNumber].image_url})`,
-                backgroundSize: `100% 100%`}} >
-                    <a href={news[newsNumber].url} target="_blank"><h5>{news[newsNumber].title}</h5></a>
+        <section>
+            <h1>Welkom op de homepagine van Williams niews</h1>
+            <h3>Land kiezen via land pagina</h3>
+            <p>
+                Dit is een nieuwspagina waarop je nieuws kan sorteren op land.
+            </p>
+            <p>
+                Nadat de gebruiker een land heeft gekozen krijgt hij 5 nieuwsberichten te zien
+            </p>
+            <p>
+                De gebruiker kan op deze pagina een categorie kiezen.
+            </p>
+            <p>
+                De gebruiker krijgt dan 5 berichten van de gekozen categorie van het desbetreffende land te zien.
+            </p>
+        </section>
+        <section>
+            <h3>Menu icoon</h3>
+            <p>
+                Ook is het mogelijk om eerst via het menu icoon een categorie te kiezen.
+            </p>
+                   <p>
+                       Er worden dan 5 (internationale) nieuwsberichten van deze categorie op de pagina weergeven.
+                   </p>
+                       <p>
+                        Op de pagina van de gekozen categorie kan er vervolgens weer een land gekozen worden.
+                       </p>
+                   <p>
+                       De gebruiker krijgt dan 5 berichten van de categorie over het gekozen land te zien.
+                </p>
+        </section>
+        <section>
+            <h3>Extra uitleg</h3>
+                <p>Stel je wilt dus sport volgen van meerdere landen dan kan dit.</p>
+                <p>Stel je wilt alleen het nederlandse nieuws volgen dan kan dat ook!</p>
+                <p>Dat maakt deze site dus superhandig!</p>
 
-                    <PreviousNextButton
-                        onClickPrevious= {() => { setNewsNumber(newsNumber - 1);}}
-                        disabledPrevious={newsNumber === 0}
-                        onClickNext={() => { setNewsNumber(newsNumber + 1);}}
-                        disabledNext={newsNumber === (news.length - 1)}
-                        classNamePrevious={newsNumber === 0 ? 'PreviousButtonDisabled' : 'PreviousButton'}
-                        classNameNext={newsNumber === news.length - 1 ? 'NextButtonDisabled' : 'NextButton'}
-                    />
-
-                    <HomeNewsDots
-                        onClickFirst={() => { setNewsNumber(0);}}
-                        onClickSecond={() => { setNewsNumber(1);}}
-                        onClickThird={() => {setNewsNumber(2)}}
-                        onClickFourth={() => {setNewsNumber(3)}}
-                        onClickFifth={() => {setNewsNumber(4)}}
-                        first={newsNumber === 0 ? 'homeNewsDotButtonClicked' : 'false1'}
-                        second={newsNumber === 1 ? 'homeNewsDotButtonClicked' : 'false2'}
-                        third={newsNumber === 2 ? 'homeNewsDotButtonClicked' : 'false3'}
-                        fourth={newsNumber === 3 ? 'homeNewsDotButtonClicked' : 'false4'}
-                        fifth={newsNumber === 4 ? 'homeNewsDotButtonClicked' : 'false5'}
-
-                    />
-                </div>
-                <div className="homePageNews2">
-                    <form>
-                        <label htmlFor="radioBox">Dit is een radio</label>
-                        <input type="radio" value="hoihoihoi" id="radioBox"/>
-                    </form>
-                </div>
-            </section>}
+        </section>
         </main>
     )
 }

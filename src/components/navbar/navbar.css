@@ -44,3 +44,21 @@
      margin-right: 10px;
  }
 
+ .navbarButton p{
+     color: darkblue;
+ }
+
+ .navbarButton p:hover {
+     color: #1f938a;
+ }
+
+ .navbarButtonLogin {
+     margin: 5px auto;
+ }
+
+ .loginRegisterNav {
+     border: 1px solid black;
+     margin-right: 5%;
+     height: 72px;
+ }
+

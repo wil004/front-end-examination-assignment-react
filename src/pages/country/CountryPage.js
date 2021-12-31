@@ -55,7 +55,7 @@ function CountryPage ({countries}) {
                         </a>
                         <img className="newsImage" src={item.image_url} />
                         <p>{item.snippet}</p>
-                        {console.log(news)}
+
                     </div>
                 )
             }) : <img src="https://media1.tenor.com/images/d6cd5151c04765d1992edfde14483068/tenor.gif" />}

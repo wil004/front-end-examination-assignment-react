@@ -1,39 +1,46 @@
 import React from "react";
 import './navbar.css';
 import {useState} from "react";
-import DropdownOptions from "./DropdownOptionsNavbar";
 import menuIcon from "./assets/menuicon.png"
 import {NavLink} from "react-router-dom";
 
-function Navbar () {
+function Navbar ({dropDownMenu, news}) {
     const [unfolded, toggleUnfolded] = useState(false);
-
     return (
+        <>
         <nav id="mainNav">
-            {unfolded ? <>
+            {unfolded ?
+            <>
                 <div className="navContent">
-                <button className="unfoldButton" onClick={() => {toggleUnfolded(!unfolded)}} >
+                <button className="unfoldButton" onClick={() => {toggleUnfolded(!unfolded);}} >
                     <img src={menuIcon} widt="50" height="50"/>
                 </button>
-                    <NavLink to="/"><p>Home</p></NavLink>
-                    <NavLink to="/country"><p>Choose news Country</p></NavLink>
-                    <p>Content</p>
-                    <p>Nog een link</p>
-                    <p>Meer</p>
+                    <NavLink to="/" className="navbarButton"><p>Home</p></NavLink>
+                    <NavLink to="/country" className="navbarButton"><p>Popular Countries</p></NavLink>
+                    <NavLink to="/allCountries" className="navbarButton"><p>All Countries</p></NavLink>
+                    <div className="loginRegisterNav">
+                        <NavLink to="/login"><p className="navbarButtonLogin">Login</p></NavLink>
+                        <NavLink to="/register" className="navbarButtonLogin"><p>Register</p></NavLink>
+                    </div>
                 </div>
-                    <DropdownOptions  click={() => { toggleUnfolded(!unfolded) }}/>
-                </>
+                {dropDownMenu}
+
+            </>
             : <div className="navContent">
                 <button className="unfoldButton" onClick={() => {toggleUnfolded(!unfolded)}}>
                     <img src={menuIcon} width="50" height="50"/>
                 </button>
-                    <NavLink to="/"><p>Home</p></NavLink>
-                    <NavLink to="/country"><p>Choose news Country</p></NavLink>
-                    <p>Content</p>
-                    <p>Nog een link</p>
-                    <p>Meer</p>
+                    <NavLink to="/" className="navbarButton"><p>Home</p></NavLink>
+                    <NavLink to="/country" className="navbarButton"><p>Popular Countries</p></NavLink>
+                    <NavLink to="/allCountries" className="navbarButton"><p>All Countries</p></NavLink>
+                    <div className="loginRegisterNav">
+                        <NavLink to="/login"><p className="navbarButtonLogin">Login</p></NavLink>
+                        <NavLink to="/register" className="navbarButtonLogin"><p>Register</p></NavLink>
+                    </div>
                 </div>}
         </nav>
+            {news}
+    </>
     )
 
 }

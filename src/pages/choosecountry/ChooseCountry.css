@@ -4,20 +4,18 @@
     text-align: center;
 }
 
-
-
 #countryPageGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .chooseCountries {
-    background-color: rgba(48, 50, 52, 0.7);
-    width: 80%;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 60%;
     margin: 30px auto;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    height: 250px;
+    height: 220px;
 }
 
 .chooseCountryNameHeader {
@@ -36,14 +34,43 @@
 
 .chooseCountryNavigate {
     position: relative;
-    bottom: -20px;
-    background-color: yellow;
-    font-size: 26px;
+    background-color: rgba(4, 4, 100, 0.6);
+    font-size: 16px;
+    bottom: -15px;
+    height: 32px;
+    color: white;
+    text-decoration: none;
 }
+
+.chooseCountryNavigate:hover {
+    color: yellow;
+    font-size: 18px;
+    background-color: rgba(4, 4, 100, 1);
+    bottom: 10px;
+}
+
 
 .chooseCountryImage {
     width: 50%;
     height: 50%;
-    padding: 0;
-    border-radius: 70px;
+    border-radius: 50px;
+}
+
+.chooseCountryImage:hover {
+    width: 60%;
+    height: 60%;
+}
+
+.chooseCountryNavigateMouse {
+    position: relative;
+    color: yellow;
+    font-size: 18px;
+    background-color: rgba(4, 4, 100, 1);
+    height: 32px;
+}
+
+.chooseCountryImageMouse {
+    width: 60%;
+    height: 60%;
+    border-radius: 50px;
 }
