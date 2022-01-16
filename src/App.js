@@ -2,13 +2,20 @@ import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router , Switch, Route} from "react-router-dom";
 import axios from "axios";
 import './App.css';
-import Home from "./pages/home/Home";
-import Choosecountry from "./pages/choosecountry/Choosecountry";
+import Choosecountry from "./pages/choosecountry/ChooseCountry";
 import CountryPage from "./pages/country/CountryPage";
 import Navbar from "./components/navbar/navbar";
+import OptionsMenu from "./components/navbar/OptionsMenu";
+import News from "./pages/news/News";
+import Home from "./pages/home/Home";
+
 
 function App() {
     const [countries, setCountries] = useState([]);
+
+    const newsToken = 'ct8nK1YSjbQaodqF9QpRKggxZXeRbHzVuWxRS8IY'
+
+
     useEffect(() => {
         async function fetchData () {
             try {
@@ -23,24 +30,42 @@ function App() {
     }, [])
 
 
-console.log(countries)
+
+    const preventDefault = (e) => {
+        e.preventDefault();
+    }
+
 
 
   return (
     <Router>
-        <Navbar />
-       <Switch>
-           <Route exact path='/'>
-               <Home />
-           </Route>
 
-           <Route exact path='/country'>
-               <Choosecountry countries={countries.length > 0 && countries} />
-           </Route>
-           <Route exact path='/country/:id'>
-               <CountryPage countries={countries} />
-           </Route>
-       </Switch>
+           <Navbar
+               dropDownMenu={<OptionsMenu />}
+           />
+
+        <Switch>
+            <Route exact path='/'>
+                <Home />
+            </Route>
+            <Route exact path={`/news/:category`}>
+                {countries.length > 0 && <News
+                    countries={countries}
+                />}
+            </Route>
+            <Route exact path={`/news/:category/:country`}>
+                {countries.length > 0 && <News
+                    countries={countries}
+                />}
+            </Route>
+
+            <Route exact path='/country'>
+                {countries.length > 0 && <Choosecountry countries={countries} />}
+            </Route>
+            <Route exact path='/country/:id'>
+                {countries.length > 0 && <CountryPage countries={countries} />}
+            </Route>
+        </Switch>
     </Router>
   );
 }

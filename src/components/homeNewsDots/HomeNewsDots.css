@@ -1,7 +1,7 @@
 .homeNewsDots {
     display: flex;
     justify-content: center;
-
+    position: relative;
 }
 
 .homeNewsDotButton {

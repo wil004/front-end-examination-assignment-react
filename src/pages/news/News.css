@@ -1,0 +1,148 @@
+.newsPage {
+    text-align: center;
+    position: relative;
+    top: 50px;
+}
+
+.newsPageBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.newsPageDiv {
+    width: 50vw;
+    height: 50vh;
+    border-radius: 2em;
+}
+
+.newsHeader h5{
+    position: absolute;
+    width: 44vw;
+    left: 27.6%;
+    background-color: rgba(0,0,0, 0.9);
+    color: #ffffff;
+    font-family: "sans-serif";
+    font-size: 1.25em;
+    font-weight: 600;
+    margin-top: 3vh;
+    padding: 0.45em 0.225em 0.45em 0.225em;
+    text-align: center;
+    border-radius: 0.5em;
+}
+
+.newsHeader h5:hover {
+    color: yellow;
+}
+
+.newsHeader2 h5{
+    position: absolute;
+    width: 45%;
+    left: 27.6%;
+    background-color: rgba(0,0,0, 0.85);
+    color: #ffffff;
+    font-family: "sans-serif";
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 3vh;
+    padding: 0.45em 0.225em 0.45em 0.225em;
+    text-align: center;
+    border-radius: 0.5em;
+}
+
+.newsHeader2 h5:hover {
+    color: yellow;
+}
+
+.newsSnippet {
+    background-color: rgba(0,0,0, 0.8);
+    width: 50%;
+    margin: 20px auto;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.goToNews {
+    font-size: 30px;
+    padding: 7px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+}
+
+.goToNews:hover {
+    background-color: #1f938a;
+    cursor: pointer;
+    color: yellow;
+}
+
+
+.loading {
+    background-color: #1f938a;
+    border-radius: 80px;
+    opacity: 0.6;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+@media screen and (min-width: 2100px) {
+    .newsPageDiv {
+        width: 46vw;
+        height: 50vh;
+        border-radius: 2em;
+    }
+
+    .newsHeader h5{
+        position: absolute;
+        width: 39.5vw;
+        left: 30%;
+    }
+
+
+    .newsHeader2 h5{
+
+        width: 39.5vw;
+        left: 30%;
+    }
+
+    .newsSnippet {
+        width: 40%;
+    }
+
+
+
+}
+
+@media screen and (min-width: 2400px) {
+    .newsPageDiv {
+        width: 42vw;
+        height: 50vh;
+        border-radius: 2em;
+    }
+
+    .newsHeader h5{
+        position: absolute;
+        width: 39.5vw;
+        left: 30%;
+    }
+
+
+    .newsHeader2 h5{
+
+        width: 39.5vw;
+        left: 30%;
+    }
+
+    .newsSnippet {
+        width: 40%;
+    }
+
+
+
+}

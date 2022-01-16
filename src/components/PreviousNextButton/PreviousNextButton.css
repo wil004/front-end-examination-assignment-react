@@ -1,45 +1,96 @@
-.PreviousNextButtonContainer {
+.PreviousNextButtonContainerNews {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.PreviousNextButtonContainerChooseCountry {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.PreviousButtonChooseCountry {
+    color: white;
+    background-color: rgba(0,0,0, 0.7);
+    width: 8vw;
+    height: 3vh;
+    border-top-left-radius: 40em;
+    border-bottom-left-radius: 5em;
+    cursor: pointer;
+}
+
+.NextButtonChooseCountry {
+    color: white;
+    background-color: rgba(0,0,0, 0.7);
+    width: 8vw;
+    height: 3vh;
+    border-top-right-radius: 40em;
+    border-bottom-right-radius: 5em;
+    cursor: pointer;
+}
+
+.NextButtonChooseCountry:disabled {
+    cursor: not-allowed;
+}
+
+.PreviousButtonChooseCountry:disabled {
+    cursor: not-allowed;
+}
+
+
 .PreviousButton {
     cursor: pointer;
     width: 4%;
-    height: 400px;
+    height: 35vh;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border: none;
-    font-size: 30px;
+    font-size: 1.6em;
     color: rgba(100,100,100, 1);
     font-weight: bold;
     background-color: rgba(0,0,0, 0.5);
+    margin-top: 12vh;
 }
 
 .PreviousButtonDisabled {
     width: 4%;
-    height: 400px;
+    height: 35vh;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border: none;
-    font-size: 30px;
+    font-size: 1.6em;
     color: rgba(100,100,100,0.5);
     font-weight: bold;
     background-color: rgba(0,0,0, 0.1);
+    margin-top: 12vh;
 }
 
 .NextButton {
     cursor: pointer;
     width: 4%;
-    height: 400px;
+    height: 35vh;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border: none;
-    font-size: 30px;
+    font-size: 1.2em;
     color: rgba(100,100,100, 1);
     font-weight: bold;
     background-color: rgba(0,0,0, 0.5);
+    margin-top: 12vh;
+}
+
+.NextButtonDisabled {
+    width: 4%;
+    height: 35vh;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size: 1.6em;
+    color: rgba(100,100,100, 0.5);
+    font-weight: bold;
+    border: none;
+    background-color: rgba(0,0,0, 0.1);
+    margin-top: 12vh;
 }
 
 .NextButton:hover {
@@ -48,16 +99,4 @@
 
 .PreviousButton:hover {
     color: rgba(255,255,0, 0.8);
-}
-
-.NextButtonDisabled {
-    width: 4%;
-    height: 400px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    font-size: 30px;
-    color: rgba(100,100,100, 0.5);
-    font-weight: bold;
-    border: none;
-    background-color: rgba(0,0,0, 0.1);
 }
