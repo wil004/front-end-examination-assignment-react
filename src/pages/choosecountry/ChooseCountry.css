@@ -1,5 +1,5 @@
 #countryPage {
-    top: 60px;
+    top: 6vh;
     position: relative;
     text-align: center;
 }
@@ -113,11 +113,8 @@
 
 .chooseCountrySearch {
     height: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: rgba(173,213,230, 0.5);
     font-family: "Agency FB";
+    margin: 0;
 }
 
 .continentName {

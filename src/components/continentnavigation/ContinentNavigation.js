@@ -1,43 +1,23 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
+import {useHistory} from "react-router-dom";
 import './ContinentNavigation.css'
-function ContinentNavigation ({setContinents, countries, setPageNumber, setContinentName}) {
-const [continent, setContinent] = useState([]);
+function ContinentNavigation ({setNavData, setUserInput}) {
 
-useEffect(() => {
-    if (countries.length > 0) {
-        setContinent([countries,
-            countries.filter((item) => {
-                return (item.region === "Oceania")
-            }),
-            countries.filter((item) => {
-                return (item.region === "Asia");
-            }),
-            countries.filter((item) => {
-                return (item.region === "Europe");
-            }),
-            countries.filter((item) => {
-                return (item.subregion === "Northern America");
-            }),
-            countries.filter((item) => {
-                return (item.subregion === "South America");
-            }),
-            countries.filter((item) => {
-                return (item.region === "Africa");
-            })]
-        )
-    }
-}, [countries] )
+const history = useHistory();
+
+
+
 
 
     return(
         <div className="continentNavigation">
-            <button onClick={() => {setContinents(continent[0]); setPageNumber(1); setContinentName('World')}} className="continentNavButton">World</button>
-            <button onClick={() => {setContinents(continent[1]); setPageNumber(1); setContinentName('Oceania')}} className="continentNavButton">Oceania</button>
-            <button onClick={() => {setContinents(continent[2]); setPageNumber(1); setContinentName('Asia')}} className="continentNavButton">Asia</button>
-            <button onClick={() => {setContinents(continent[3]); setPageNumber(1); setContinentName('Europe')}} className="continentNavButton">Europe</button>
-            <button onClick={() => {setContinents(continent[4]); setPageNumber(1); setContinentName('North America')}} className="continentNavButton">North America</button>
-            <button onClick={() => {setContinents(continent[5]); setPageNumber(1); setContinentName('South America')}} className="continentNavButton">South America</button>
-            <button onClick={() => {setContinents(continent[6]); setPageNumber(1); setContinentName('Africa')}} className="continentNavButton">Africa</button>
+            <button onClick={() => {setNavData('World'); history.push('/countries/World/pageNumber=1'); setUserInput('');}} className="continentNavButton">World</button>
+            <button onClick={() => {setNavData('Oceania'); history.push('/countries/Oceania/pageNumber=1'); setUserInput('');}} className="continentNavButton">Oceania</button>
+            <button onClick={() => {setNavData('Asia'); history.push('/countries/Asia/pageNumber=1'); setUserInput('');}} className="continentNavButton">Asia</button>
+            <button onClick={() => {setNavData('Europe'); history.push('/countries/Europe/pageNumber=1'); setUserInput('');}} className="continentNavButton">Europe</button>
+            <button onClick={() => {setNavData('North America'); history.push('/countries/North-America/pageNumber=1'); setUserInput('');}} className="continentNavButton">North America</button>
+            <button onClick={() => {setNavData('South America'); history.push('/countries/South-America/pageNumber=1'); setUserInput('');}} className="continentNavButton">South America</button>
+            <button onClick={() => {setNavData('Africa'); history.push('/countries/Africa/pageNumber=1'); setUserInput('');}} className="continentNavButton">Africa</button>
         </div>
     )
 

@@ -2,20 +2,21 @@
     display: flex;
     justify-content: center;
     position: relative;
+    margin-top: 2.25em;
 }
 
 .homeNewsDotButton {
-    height: 15px;
-    width: 15px;
-    border-radius: 10px;
+    height: 1vh;
+    width: 1vw;
+    border-radius: 1em;
     cursor: pointer;
-    margin: 7px;
+    margin: 0 1.2em 0 1.2em;
 }
 
 #homeNewsDotButtonClicked {
-    height: 15px;
-    width: 15px;
-    border-radius: 10px;
+    height: 1vh;
+    width: 1vw;
+    border-radius: 1em;
     cursor: pointer;
     background-color: black;
 }

@@ -43,54 +43,54 @@
     cursor: pointer;
     width: 4%;
     height: 35vh;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
     border: none;
-    font-size: 1.6em;
+    font-size: 1.2em;
     color: rgba(100,100,100, 1);
     font-weight: bold;
     background-color: rgba(0,0,0, 0.5);
-    margin-top: 12vh;
+    margin-top: 8vh;
 }
 
 .PreviousButtonDisabled {
     width: 4%;
     height: 35vh;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
     border: none;
-    font-size: 1.6em;
+    font-size: 1.2em;
     color: rgba(100,100,100,0.5);
     font-weight: bold;
     background-color: rgba(0,0,0, 0.1);
-    margin-top: 12vh;
+    margin-top: 8vh;
 }
 
 .NextButton {
     cursor: pointer;
     width: 4%;
     height: 35vh;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
     border: none;
     font-size: 1.2em;
     color: rgba(100,100,100, 1);
     font-weight: bold;
     background-color: rgba(0,0,0, 0.5);
-    margin-top: 12vh;
+    margin-top: 8vh;
 }
 
 .NextButtonDisabled {
     width: 4%;
     height: 35vh;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    font-size: 1.6em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    font-size: 1.2em;
     color: rgba(100,100,100, 0.5);
     font-weight: bold;
     border: none;
     background-color: rgba(0,0,0, 0.1);
-    margin-top: 12vh;
+    margin-top: 8vh;
 }
 
 .NextButton:hover {

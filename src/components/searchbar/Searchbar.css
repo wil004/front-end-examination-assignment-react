@@ -1,12 +1,25 @@
-.searchbarInput {
+.searchbarInputNewsPage {
     height: 1.7em;
-    width: 12vw;
+    width: 24vw;
     background-color: black;
     opacity: 0.5;
     color: white;
     border-radius: 1em 0 0 1em;
     font-weight: bold;
     border: none;
+    margin-top: 2.5em;
+}
+
+.searchbarInputChooseCountry {
+    height: 1.7em;
+    width: 18vw;
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 1em;
+    margin-top: 0.5em;
 }
 
 .searchbarSubmit {
@@ -27,12 +40,12 @@
 
 .searchOptions {
     opacity: 0.95;
-    position: fixed;
+    position: absolute;
     z-index: 3;
-    left: 43.3vw;
+    left: 37.5vw;
     overflow-y: scroll;
     max-height: 40vh;
-    width: 12vw;
+    width: 24vw;
     background-color: black;
     border-bottom-left-radius: 50px;
 }
@@ -57,17 +70,16 @@
 
 @media screen and (max-width: 800px) {
 
-
-    .searchbarInput {
+    .searchbarInputChooseCountry {
         position: relative;
         top: 0;
         height: 0.7em;
-        width: 5em;
+        width: 8em;
         background-color: black;
         opacity: 0.5;
         font-weight: bold;
         border: none;
-        border-radius: 5em;
+        border-radius: 1em;
     }
 
     .searchbarSubmit {

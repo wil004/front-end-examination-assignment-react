@@ -1,27 +1,48 @@
 .navMenu {
     max-width: 50%;
     margin: 0 auto;
-    padding: 10px;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
 .navMenuOption {
-    width: 15%;
-    padding: 0 10px 0 10px;
-    margin: 10px 50px 0 50px;
-    height: 50px;
+    color: white;
+    background-color: rgba(0,0,0, 0.7);
+    border-radius: 1vw;
+    height: 3.5vh;
+    font-size: 0.6em;
+    margin: 1vh 3.5vw 0 3.5vw;
+    cursor: pointer;
+    max-width: 20%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: rgba(96, 94, 94, 0.7);
-    border-radius: 30px;
+    justify-content: space-around;
+}
+
+.categoryImage {
+    width: 2.75vw;
+    height: 3vh;
+    margin-left: 0.5vw;
+}
+
+.categoryImage2 {
+    width: 1.5vw;
+    height: 1.75vh;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.categoryImage3{
+    width: 2vw;
+    height: 2.2vh;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
 }
 
 .navMenuOption p{
-    font-size: 20px;
-    margin-right: 10px;
+    font-size: 1.4em;
+    margin: 0 1em 0 0;
 }

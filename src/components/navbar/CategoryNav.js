@@ -9,34 +9,35 @@ import tech from "./assets/tech.png"
 import './CategoryNav.css'
 import {useParams} from "react-router-dom";
 
-function CategoryNav ({clickGeneral, clickSports, clickPolitics, clickFood, clickTravel, clickTech}) {
+function CategoryNav () {
 
     const {country} = useParams();
 
+
     return (
         <div className="navMenu">
-            <NavLink className="navMenuOption" to={country ? `/news/general/${country}` : `/news/general`} onClick={clickGeneral} >
-                <img src={general} widt="40" height="40" />
+            <NavLink className="navMenuOption" to={country ? `/news/general/${country}` : `/news/general`}>
+                <img src={general} className="categoryImage" />
                 <p>General</p>
             </NavLink>
-            <NavLink className="navMenuOption" to={country ? `/news/sports/${country}` : `/news/sports`} onClick={clickSports}>
-                <img src={sports} width="25" height="25"/>
+            <NavLink className="navMenuOption" to={country ? `/news/sports/${country}` : `/news/sports`}>
+                <img src={sports} className="categoryImage2"/>
                 <p>Sports</p>
             </NavLink>
-            <NavLink className="navMenuOption" to={country ? `/news/politics/${country}` : `/news/politics`} onClick={clickPolitics}>
-                <img src={politics} width="30" height="30"/>
+            <NavLink className="navMenuOption" to={country ? `/news/politics/${country}` : `/news/politics`}>
+                <img src={politics} className="categoryImage3"/>
                 <p>Politics</p>
             </NavLink>
-            <NavLink className="navMenuOption" to={country ? `/news/food/${country}` : `/news/food`} onClick={clickFood}>
-                <img src={food} width="30" height="30" />
+            <NavLink className="navMenuOption" to={country ? `/news/food/${country}` : `/news/food`} >
+                <img src={food} className="categoryImage3" />
                 <p>Food</p>
             </NavLink>
-            <NavLink className="navMenuOption" to={country ? `/news/travel/${country}` : `/news/travel`} onClick={clickTravel}>
-               <img src={travel} width="30" height="30" />
+            <NavLink className="navMenuOption" to={country ? `/news/travel/${country}` : `/news/travel`}>
+               <img src={travel} className="categoryImage2" />
                 <p>Travel</p>
             </NavLink>
-            <NavLink className="navMenuOption" to={country ? `/news/tech/${country}` : `/news/tech`} onClick={clickTech}>
-                <img src={tech} width="30" height="30" />
+            <NavLink className="navMenuOption" to={country ? `/news/tech/${country}` : `/news/tech`}>
+                <img src={tech} className="categoryImage2" />
                 <p>Tech</p>
             </NavLink>
         </div>

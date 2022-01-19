@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import './Searchbar.css'
 
-function SearchBar ({userInput, setUserInput, onClick, newsPage, disabled, chooseCountryPage}) {
+function SearchBar ({userInput, setUserInput, onClick, newsPage,
+                        disabled, chooseCountryPage, className, id, label}) {
 
 
 
@@ -9,9 +10,12 @@ function SearchBar ({userInput, setUserInput, onClick, newsPage, disabled, choos
 
     return (
         <section className="searchbar">
+            {label}
             <form className="searchbarForm">
                 <input
-                       className="searchbarInput"
+                        id={id}
+                       placeholder="Search Country"
+                       className={className}
                        type="text"
                        value={userInput}
                        onChange={(e) =>   {
@@ -32,8 +36,8 @@ function SearchBar ({userInput, setUserInput, onClick, newsPage, disabled, choos
 
 
                 />
-                <button className="searchbarSubmit" type="submit" onClick={onClick}
-                        disabled={disabled}>Search</button>
+                {newsPage && <button className="searchbarSubmit" type="submit" onClick={onClick}
+                        disabled={disabled}>Search</button>}
             </form>
             {newsPage}
             {chooseCountryPage}
