@@ -1,47 +1,31 @@
 import React from "react";
 import './navbar.css';
-import {useState} from "react";
-import menuIcon from "./assets/menuicon.png"
 import {NavLink} from "react-router-dom";
 
-function Navbar ({dropDownMenu, news}) {
-    const [unfolded, toggleUnfolded] = useState(false);
+
+function Navbar ({navData}) {
+
+
     return (
         <>
-        <nav id="mainNav">
-            {unfolded ?
-            <>
-                <div className="navContent">
-                <button className="unfoldButton" onClick={() => {toggleUnfolded(!unfolded);}} >
-                    <img src={menuIcon} width="40" height="40"/>
-                </button>
-                    <NavLink to="/" className="navbarButton">Home</NavLink>
-                    <NavLink to="/news/general" className="navbarButton">News</NavLink>
-                    <NavLink to="/country" className="navbarButton">Countries</NavLink>
+            <nav id="nav">
 
-                    <div className="loginRegisterNav">
-                        <NavLink to="/login">Login</NavLink>
-                        <NavLink to="/register" className="navbarButtonLogin">Register</NavLink>
-                    </div>
+                <div className="nav left">
+                    <NavLink exact to="/" className="nav-link">Home</NavLink>
+                    <NavLink to="/news" className="nav-link">News</NavLink>
+                    <NavLink to="/countries/" className="nav-link">Countries</NavLink>
+                    <NavLink to="/personal" className="nav-link">Userpage</NavLink>
                 </div>
-                {dropDownMenu}
+                <div>
+                    <h1 className="navData">{navData}</h1>
+                </div>
+                <div className="nav right">
+                    <NavLink to="/login" className="nav-link">Login</NavLink>
+                    <NavLink to="/register" className="nav-link">Register</NavLink>
+                </div>
+            </nav>
+        </>
 
-            </>
-            : <div className="navContent">
-                <button className="unfoldButton" onClick={() => {toggleUnfolded(!unfolded)}}>
-                    <img src={menuIcon} width="40" height="40"/>
-                </button>
-                    <NavLink to="/" className="navbarButton">Home</NavLink>
-                    <NavLink to="/news/general" className="navbarButton">News</NavLink>
-                    <NavLink to="/country" className="navbarButton">Countries</NavLink>
-                    <div className="loginRegisterNav">
-                        <NavLink to="/login">Login</NavLink>
-                        <NavLink to="/register" className="navbarButtonLogin">Register</NavLink>
-                    </div>
-                </div>}
-        </nav>
-            {news}
-    </>
     )
 
 }

@@ -2,9 +2,9 @@ import React from "react";
 import './HomeNewsDots.css'
 
 function HomeNewsDots ({first, second, third, fourth, fifth, onClickFirst, onClickSecond,
-                       onClickThird, onClickFourth, onClickFifth}) {
+                       onClickThird, onClickFourth, onClickFifth, className}) {
     return (
-        <div className="homeNewsDots">
+        <div className={className}>
             <button className="homeNewsDotButton" id={first} onClick={onClickFirst}> </button>
             <button className="homeNewsDotButton" id={second} onClick={onClickSecond}> </button>
             <button className="homeNewsDotButton" id={third} onClick={onClickThird}> </button>

@@ -1,18 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import {BrowserRouter as Router , Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import axios from "axios";
 import './App.css';
-import Choosecountry from "./pages/choosecountry/ChooseCountry";
+import ChooseCountry from "./pages/choosecountry/ChooseCountry";
 import CountryPage from "./pages/country/CountryPage";
 import Navbar from "./components/navbar/navbar";
-import OptionsMenu from "./components/navbar/OptionsMenu";
 import News from "./pages/news/News";
 import Home from "./pages/home/Home";
 
 
 function App() {
     const [countries, setCountries] = useState([]);
-
+    const [navData, setNavData] = useState([]);
     const newsToken = 'ct8nK1YSjbQaodqF9QpRKggxZXeRbHzVuWxRS8IY'
 
 
@@ -31,39 +30,55 @@ function App() {
 
 
 
-    const preventDefault = (e) => {
-        e.preventDefault();
-    }
+
 
 
 
   return (
     <Router>
-
            <Navbar
-               dropDownMenu={<OptionsMenu />}
+               navData={navData}
            />
 
         <Switch>
             <Route exact path='/'>
                 <Home />
             </Route>
-            <Route exact path={`/news/:category`}>
-                {countries.length > 0 && <News
-                    countries={countries}
-                />}
+            <Route exact path={`/news`}>
+                <Redirect to="/news/general/world"/>
             </Route>
             <Route exact path={`/news/:category/:country`}>
-                {countries.length > 0 && <News
+                {countries.length > 0 &&
+                <News
                     countries={countries}
+                    setNavData={setNavData}
+                    navData={navData}
                 />}
             </Route>
-
-            <Route exact path='/country'>
-                {countries.length > 0 && <Choosecountry countries={countries} />}
+            <Route exact path='/countries'>
+                <Redirect to='/countries/world/pageNumber=1' />
             </Route>
-            <Route exact path='/country/:id'>
-                {countries.length > 0 && <CountryPage countries={countries} />}
+            <Route exact path='/countries/:continent/pageNumber=:pageId'>
+                {countries.length > 0 &&
+                <ChooseCountry
+                    countries={countries}
+                    setNavData={setNavData}
+                />
+                }
+            </Route>
+            <Route exact path='/countrypage/:id/'>
+                {countries.length > 0 &&
+                <CountryPage
+                    countries={countries}
+                    setNavData={setNavData}
+                />}
+            </Route>
+            <Route exact path='/countrypage/:id/:category'>
+                {countries.length > 0 &&
+                <CountryPage
+                    countries={countries}
+                    setNavData={setNavData}
+                />}
             </Route>
         </Switch>
     </Router>

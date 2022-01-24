@@ -1,21 +1,55 @@
 .homeNewsDots {
     display: flex;
     justify-content: center;
-    position: relative;
+    margin-top: 1.5em;
+    width: 100%;
+}
+.homeCountryDots {
+    width: 100%;
 }
 
 .homeNewsDotButton {
-    height: 15px;
-    width: 15px;
-    border-radius: 10px;
+    height: 1vh;
+    width: 1vw;
+    border-radius: 1em;
     cursor: pointer;
-    margin: 7px;
+    margin: 0 1em 0 1em;
 }
 
 #homeNewsDotButtonClicked {
-    height: 15px;
-    width: 15px;
-    border-radius: 10px;
+    height: 1vh;
+    width: 1vw;
+    border-radius: 1em;
     cursor: pointer;
     background-color: black;
+}
+
+@media screen and (max-width: 1080px) {
+
+
+}
+
+
+@media screen and (max-width: 760px) {
+    .homeNewsDotButton {
+        margin: 0.75em;
+    }
+}
+
+@media screen and (max-width: 490px) {
+
+
+    .homeNewsDotButton {
+        margin: 0.4em;
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+
+
+    .homeNewsDotButton {
+        margin: 0.2em;
+    }
+
 }
