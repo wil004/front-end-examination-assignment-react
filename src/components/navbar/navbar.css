@@ -43,6 +43,18 @@ h1.logo {
     border-top: 0.5px solid #ddd;
 }
 
+.nav-link-logout {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 1em;
+    color: white;
+    border: none;
+}
+
+.nav-link-logout:last-child {
+    padding-right: 3em;
+}
+
 .nav-link:link, .nav-link:visited, .nav-link:active {
     text-decoration: none;
     color: #dadada;
@@ -86,9 +98,6 @@ h1.logo {
         color: #000000;
     }
 
-    .nav-link-span {
-        display: inline-block;
-    }
 
     .nav-link {
         color: #777;
@@ -99,5 +108,16 @@ h1.logo {
         padding-right: 3em;
     }
 
+    .navbarUserDetails {
+        position: absolute;
+        font-size: 0.7em;
+        color: white;
+        margin-left: 7vw;
+        line-height: 0.5;
+        z-index: 1;
+    }
 
-
+    .navbarProfilePicture {
+        height: 4.5vh;
+        width: 5vw;
+    }

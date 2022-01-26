@@ -1,18 +1,20 @@
-import React, {useEffect, useState} from 'react';
-import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
+import React, {useEffect, useState, useContext} from 'react';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import axios from "axios";
 import './App.css';
-import ChooseCountry from "./pages/choosecountry/ChooseCountry";
-import CountryPage from "./pages/country/CountryPage";
 import Navbar from "./components/navbar/navbar";
-import News from "./pages/news/News";
+import PrivateRoute from "./components/privateroute/PrivateRoute";
 import Home from "./pages/home/Home";
+import Login from "./pages/login-register/Login";
+import {AuthContext} from "./context/AuthContext";
+import Register from "./pages/login-register/Register";
 
 
 function App() {
     const [countries, setCountries] = useState([]);
     const [navData, setNavData] = useState([]);
     const newsToken = 'ct8nK1YSjbQaodqF9QpRKggxZXeRbHzVuWxRS8IY'
+    const { auth } = useContext(AuthContext);
 
 
     useEffect(() => {
@@ -44,42 +46,17 @@ function App() {
             <Route exact path='/'>
                 <Home />
             </Route>
-            <Route exact path={`/news`}>
-                <Redirect to="/news/general/world"/>
+            <Route exact path='/login'>
+                <Login />
             </Route>
-            <Route exact path={`/news/:category/:country`}>
-                {countries.length > 0 &&
-                <News
-                    countries={countries}
-                    setNavData={setNavData}
-                    navData={navData}
-                />}
+            <Route exact path='/register'>
+                <Register />
             </Route>
-            <Route exact path='/countries'>
-                <Redirect to='/countries/world/pageNumber=1' />
-            </Route>
-            <Route exact path='/countries/:continent/pageNumber=:pageId'>
-                {countries.length > 0 &&
-                <ChooseCountry
-                    countries={countries}
-                    setNavData={setNavData}
-                />
-                }
-            </Route>
-            <Route exact path='/countrypage/:id/'>
-                {countries.length > 0 &&
-                <CountryPage
-                    countries={countries}
-                    setNavData={setNavData}
-                />}
-            </Route>
-            <Route exact path='/countrypage/:id/:category'>
-                {countries.length > 0 &&
-                <CountryPage
-                    countries={countries}
-                    setNavData={setNavData}
-                />}
-            </Route>
+            {auth.isAuth && <PrivateRoute
+                countries={countries}
+                navData={navData}
+                setNavData={setNavData}
+            />}
         </Switch>
     </Router>
   );

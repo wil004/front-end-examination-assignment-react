@@ -151,9 +151,9 @@
 
 .newsSnippet {
     background-color: rgba(0,0,0, 0.8);
-    width: 45vw;
+    width: 42vw;
     padding: 0.5vh 0.5vw;
-    margin: 3.5vh auto 1.5vh auto;
+    margin: 5vh auto 1.5vh auto;
     border-radius: 1em;
     color: white;
     text-align: center;
@@ -196,7 +196,7 @@
 
     .newsHeader h5{
         position: absolute;
-        left: 30%;
+        left: 27.5%;
     }
 
 

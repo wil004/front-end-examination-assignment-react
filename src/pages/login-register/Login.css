@@ -1,0 +1,54 @@
+ .login {
+     position: relative;
+     top: 20vh;
+     text-align: center;
+ }
+
+ .loginInfo {
+     color: white;
+     font-size: 0.9em;
+ }
+
+ .login h1 {
+     background-color: black;
+     color: white;
+     width: 40%;
+     margin: 0 auto;
+     border-top-right-radius: 2em;
+     border-top-left-radius: 2em;
+ }
+
+ .loginForm {
+     display: flex;
+     flex-direction: column;
+     background-color: rgba(0, 40,140, 0.9);
+     width: 40%;
+     margin: 0 auto;
+     border-radius: 0 0 1em 1em;
+     padding: 0.5em 0 2em 0;
+ }
+
+
+ .loginForm label {
+     background-color: black;
+     color: white;
+     width: 50%;
+     padding: 0.2em;
+     margin: 2vh auto auto auto;
+     border-radius: 0.5em 0.5em 0 0;
+ }
+
+ .loginForm input {
+     width: 50%;
+     margin: 0 auto 1vh auto;
+     color: black;
+     font-weight: bold;
+     font-family: "Arial Nova", sans-serif;
+     font-size: 1.2em;
+     border-radius: 0 0 0.5em 0.5em;
+ }
+
+ .loginForm button {
+     width: 15%;
+     margin: 0 auto;
+ }

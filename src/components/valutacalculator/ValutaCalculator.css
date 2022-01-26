@@ -1,0 +1,218 @@
+/* valuta */
+
+.valutaCalculator {
+    width: 50%;
+    background: linear-gradient(to bottom, rgba(0,0,80, 0.5), rgba(0,0,120,0.5),rgba(0,0,160,0.5),rgba(0,0,190,0.5));
+    margin-left: 5vw;
+    height: 40vh;
+    border-radius: 2vw;
+}
+
+.chooseValuta {
+    display: flex;
+    justify-content: center;
+}
+
+.countryPageValuta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    border-top-left-radius: 2vw;
+}
+
+.userChoiceValuta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    width: 100%;
+    border-top-right-radius: 2vw;
+}
+
+.userChoiceValutaButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userChoiceValutaName {
+    font-size: 1em;
+    margin-top: 4vh;
+    font-weight: bold;
+}
+
+.chooseValutaButton {
+    background: linear-gradient(to bottom, rgba(0, 80, 28, 0.7), rgba(0,90,40,0.8),rgba(0,70,35,0.8),rgba(0,75, 90,0.7));
+    color: white;
+    border-radius: 2em;
+    width: 6vw;
+    margin: 1em;
+    cursor: pointer;
+}
+
+.chooseValutaButton:disabled {
+    background-color: rgba(255,255,0, 1);
+    cursor: none;
+}
+
+
+.chooseCountryForValutaSelect {
+    text-align: center;
+    border-radius: 1em;
+    background: linear-gradient(to bottom, rgba(0,0,80, 0.7), rgba(0,0,120,0.8),rgba(0,0,160,0.8),rgba(0,0,190,0.7));
+    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: 2vh;
+}
+
+.chooseCountryForValutaOption {
+    background-color: rgba(0,30,180,0.8);
+}
+
+.calculateValuta {
+    margin-top: 4vh;
+    font-size: 1.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.valutaInput {
+    margin-left: 1vw;
+    display: flex;
+    align-items: center;
+}
+
+.valutaOutput {
+    margin-right: 1vw;
+    display: flex;
+    align-items: center;
+}
+
+.exchangeImage {
+    width: 2em;
+    height: 2em;
+}
+
+.valutaExchangeButton {
+    border-radius: 1em;
+    background-color: lightseagreen;
+    cursor: pointer;
+}
+
+#valutaAmountInput {
+    margin-left: 2vw;
+    width: 10vw;
+}
+
+#valutaAmountOutput {
+    margin-right: 1vw;
+    width: 10vw;
+}
+
+.calculatedValutaResult {
+    padding: 0.3em;
+    margin-top: 5vh;
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+}
+
+
+@media screen and (max-width: 1080px) {
+    /* valuta */
+
+    .chooseCountryForValutaSelect {
+        max-width: 50%;
+        font-size: 0.7em;
+    }
+    .countryPageValuta {
+        font-size: 0.9em;
+    }
+    .calculateValuta {
+        margin-top: 5vh;
+    }
+
+    .calculatedValutaResult {
+        padding: 0.4em;
+        font-size: 1.1em;
+        margin-top: 5vh;
+    }
+
+    .userChoiceValutaName {
+        font-size: 0.8em;
+        margin-top: 1vh;
+    }
+
+}
+
+
+@media screen and (max-width: 760px) {
+    /* valuta */
+
+    .chooseCountryForValutaSelect {
+        max-width: 50%;
+        font-size: 0.7em;
+    }
+
+    .countryPageValuta {
+        font-size: 0.8em;
+    }
+
+    .calculateValuta {
+        margin-top: 8vh;
+    }
+
+    #valutaAmountInput {
+        font-size: 0.7em;
+    }
+
+    #valutaAmountOutput {
+        font-size: 0.7em;
+    }
+
+    .inOutputLabel {
+        font-size: 0.7em;
+    }
+    .exchangeImage {
+        width: 3vw;
+        height: 3vh;
+    }
+
+    .valutaExchangeButton {
+        width: 7vw;
+        height: 4vh;
+        margin: 0 1vw;
+    }
+
+    .calculatedValutaResult {
+        padding: 0.6em;
+        margin-top: 7vh;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .valutaCalculator {
+        height: 40vh;
+    }
+
+    .calculateValuta {
+        margin-top: 7vh;
+    }
+
+    .calculatedValutaResult {
+        padding: 1em;
+        font-size: 1.2em;
+        margin-top: 5vh;
+    }
+}

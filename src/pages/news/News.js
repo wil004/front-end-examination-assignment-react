@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import './News.css'
-import PreviousNextButton from "../../components/PreviousNextButton/PreviousNextButton";
-import HomeNewsDots from "../../components/homeNewsDots/HomeNewsDots";
 import SearchBar from "../../components/searchbar/Searchbar";
 import {useHistory, useParams} from "react-router-dom";
-import timeCalculator from "../../helpers/TimeCalculator";
+import timeCalculator from "../../helpers/timeCalculator";
 import QuickNavbar from "../../components/quicknavbar/QuickNavbar";
 import NewsContainer from "../../components/newscontainer/NewsContainer";
 import clock from "../../assets/clock.gif"
