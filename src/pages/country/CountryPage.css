@@ -1,46 +1,515 @@
-#mainNews {
-    border: 5px solid rgba(0,0,0, 0.7);
-    width: 60%;
-    margin: 10px auto;
+.chosenCountry {
+    position: relative;
+    top: 7.5vh;
+}
+
+.countryInformation {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.countryDetails {
+    margin-left: 0vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 38vw;
+    border-radius: 2em 2em 1em 1em;
+    background: linear-gradient(to bottom, rgba(101, 101, 101, 0.8), rgba(55, 55, 55,0.8), rgba(103, 103, 103, 0.8), rgba(42, 42, 42, 0.8));
+}
+
+.countryDetails h1 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    border-radius: 1em 1em 0 0;
+    background-color: black;
     text-align: center;
-    position: relative;
-    top: 100px;
-    z-index: 0;
-    background-color: rgba(54, 79, 8, 0.6);
-    border-radius: 30px;
 }
 
-.news {
-    border: 5px solid rgba(0,0,0,0.6);
-    border-radius: 70px;
+.countryDetails p {
+    color: white;
+    font-size: 0.8em;
+    font-weight: 300;
+    margin: 0.5em;
+}
+
+.countryFlagImage {
+    margin-top: 0.5em;
+    width: 22.5vw;
+    height: 14vh;
+}
+
+.goToCountryNews:hover {
+    background-color: #1f938a;
+    cursor: pointer;
+    color: yellow;
+}
+
+
+.countryHolidaysAndValutaCalculator {
+    display: flex;
+    align-items: start;
+    margin-top: 5vh;
+}
+
+.countryHolidays {
+    position: absolute;
+    right: 2vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 30vw;
+    background: linear-gradient(to bottom, rgba(101, 101, 101, 0.8), rgba(55, 55, 55,0.8), rgba(103, 103, 103, 0.8), rgba(42, 42, 42, 0.8));
+    border-radius: 1em;
+    padding: 1.5em;
+}
+
+.countryHolidaysHeader {
+    margin-top: -1vh;
+    margin-bottom: 1.2vh;
+    display: flex;
+    font-size: 0.7em;
+    justify-content: space-between;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    background-color: rgba(0,0,0, 1);
+    color: white;
+}
+
+
+.countryHolidays p {
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0.4vh 0;
+    font-size: 0.7em;
+}
+
+.countryHolidaysDates {
+    background: linear-gradient(to bottom, rgba(0,0,80, 0.7), rgba(0,0,120,0.8),rgba(0,0,160,0.8),rgba(0,0,190,0.7));
+    border: 0.2em solid black;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* valuta */
+
+.valutaCalculator {
     width: 50%;
-    margin: 30px auto;
-    padding: 10px;
-    background-color: rgba(92,106,110,0.7);
+    background: linear-gradient(to bottom, rgba(0,0,80, 0.5), rgba(0,0,120,0.5),rgba(0,0,160,0.5),rgba(0,0,190,0.5));
+    margin-left: 5vw;
+    height: 40vh;
+    border-radius: 2vw;
 }
 
-.newsImage {
+.chooseValuta {
+    display: flex;
+    justify-content: center;
+}
+
+.countryPageValuta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    border-top-left-radius: 2vw;
+}
+
+.userChoiceValuta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    width: 100%;
+    border-top-right-radius: 2vw;
+}
+
+.userChoiceValutaButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userChoiceValutaName {
+    font-size: 1em;
+    margin-top: 4vh;
+    font-weight: bold;
+}
+
+.chooseValutaButton {
+    background: linear-gradient(to bottom, rgba(0, 80, 28, 0.7), rgba(0,90,40,0.8),rgba(0,70,35,0.8),rgba(0,75, 90,0.7));
+    color: white;
+    border-radius: 2em;
+    width: 6vw;
+    margin: 1em;
+    cursor: pointer;
+}
+
+.chooseValutaButton:disabled {
+    background-color: rgba(255,255,0, 1);
+    cursor: none;
+}
+
+
+.chooseCountryForValutaSelect {
+    text-align: center;
+    border-radius: 1em;
+    background: linear-gradient(to bottom, rgba(0,0,80, 0.7), rgba(0,0,120,0.8),rgba(0,0,160,0.8),rgba(0,0,190,0.7));
+    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: 2vh;
+}
+
+.chooseCountryForValutaOption {
+background-color: rgba(0,30,180,0.8);
+}
+
+.calculateValuta {
+    margin-top: 4vh;
+    font-size: 1.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.valutaInput {
+    margin-left: 1vw;
+    display: flex;
+    align-items: center;
+}
+
+.valutaOutput {
+    margin-right: 1vw;
+    display: flex;
+    align-items: center;
+}
+
+.exchangeImage {
+    width: 2em;
+    height: 2em;
+}
+
+.valutaExchangeButton {
+    border-radius: 1em;
+    background-color: lightseagreen;
+    cursor: pointer;
+}
+
+#valutaAmountInput {
+    margin-left: 2vw;
+    width: 10vw;
+}
+
+#valutaAmountOutput {
+    margin-right: 1vw;
+    width: 10vw;
+}
+
+.calculatedValutaResult {
+    padding: 0.3em;
+    margin-top: 5vh;
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+}
+
+/* NewsContainer component below here */
+
+.countryNews {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4vh;
+    margin-top: 7vh;
+    margin-right: 5vw;
+}
+
+
+.countryNewsContainer {
+    width: 70%;
+    height: 35vh;
+    border-radius: 1em;
+    margin-right: 10vw;
+}
+
+.countryNewsHeader {
+    font-size: 0.8em;
+    position: absolute;
+    text-align: center;
+    right: 24.5vw;
     width: 40%;
-    height: 30%;
+    background-color: rgba(0,0,0, 0.9);
+    color: #ffffff;
+    font-family: "sans-serif";
+    font-weight: 600;
+    margin: 2vh 0 0 0;
+    border-radius: 0.5em;
 }
 
-.chosenCountryName {
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-    background-color: rgba(68, 37, 10, 0.5);
-    color: #48cbe1;
-    font-size: 40px;
-    font-family: Algerian;
+.countryNewsHeader:hover {
+    color: yellow;
 }
 
+.countryNewsSnippet {
+    font-size: 0.65em;
+    background-color: rgba(0,0,0, 0.8);
+    position: absolute;
+    right: 5vw;
+    top: 4vh;
+    width: 12vw;
+    height: 35vh;
+    padding: 0.5vh 0.5vw;
+    margin: 3.5vh auto 1.5vh auto;
+    border-radius: 1em;
+    color: white;
+    text-align: center;
+}
 
-
-.goBackButton {
-    position: relative;
-    top: 80px;
-    border-radius: 30px;
+.goToCountryNews {
+    position: absolute;
+    right: 34vw;
+    width: 20%;
+    top: 43vh;
+    font-size: 0.9em;
+    padding: 4px;
+    border-radius: 10px;
     background-color: black;
     color: white;
-    margin-left: 80%;
+    font-weight: 300;
+}
+
+
+
+
+
+/* HomeNewsDots component below here */
+
+.homeCountryDots {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.25em;
+    width: 42vw;
+}
+
+/* QuickNavbar component below here */
+
+.quickNavCountryPage {
+    max-width: 80%;
+    position: absolute;
+    top: 0;
+}
+
+.countryNavButton {
+    color: white;
+    background-color: rgba(0,0,0, 0.7);
+    border-radius: 1vw;
+    height: 2vh;
+    font-size: 0.8em;
     cursor: pointer;
+    width: 8em;
+    margin-bottom: 0.5vh;
+}
+
+
+
+
+@media screen and (min-width: 1750px) {
+    /* quickNav */
+    .quickNavCountryPage {
+        margin-right: 10vw;
+    }
+
+
+    /* countryDetails */
+
+    .countryDetails {
+        margin-left: 5vw;
+    }
+
+    /* countryNews */
+
+    .countryNews {
+        margin-right: 5vw;
+    }
+
+    .goToCountryNews {
+        right: 32vw;
+        height: 3vh;
+        font-size: 1.2em;
+    }
+
+    .countryNewsContainer {
+        width: 55%;
+        height: 35vh;
+        border-radius: 1em;
+    }
+
+    .countryNewsHeader {
+        width: 35%;
+        right: 25.1vw;
+    }
+
+    /* countryHoliday */
+
+    .countryHolidays {
+        right: 5vw;
+        width: 30vw;
+    }
+
+
+    /* HomeNewsDots component below here */
+
+    .homeCountryDots {
+        display: flex;
+        justify-content: center;
+        margin-top: 2.25em;
+        width: 35vw;
+    }
+}
+
+
+
+@media screen and (max-width: 1080px) {
+    /* valuta */
+
+    .chooseCountryForValutaSelect {
+        max-width: 50%;
+        font-size: 0.7em;
+    }
+    .countryPageValuta {
+        font-size: 0.9em;
+    }
+    .calculateValuta {
+        margin-top: 5vh;
+    }
+
+    .calculatedValutaResult {
+        padding: 0.4em;
+        font-size: 1.1em;
+        margin-top: 5vh;
+    }
+
+    .userChoiceValutaName {
+        font-size: 0.8em;
+        margin-top: 1vh;
+    }
+
+}
+
+
+@media screen and (max-width: 760px) {
+    /* valuta */
+
+    .chooseCountryForValutaSelect {
+        max-width: 50%;
+        font-size: 0.7em;
+    }
+
+    .countryPageValuta {
+        font-size: 0.8em;
+    }
+
+    .calculateValuta {
+        margin-top: 8vh;
+    }
+
+    #valutaAmountInput {
+        font-size: 0.7em;
+    }
+
+    #valutaAmountOutput {
+        font-size: 0.7em;
+    }
+
+    .inOutputLabel {
+        font-size: 0.7em;
+    }
+    .exchangeImage {
+        width: 3vw;
+        height: 3vh;
+    }
+
+    .valutaExchangeButton {
+        width: 7vw;
+        height: 4vh;
+        margin: 0 1vw;
+    }
+
+    .calculatedValutaResult {
+        padding: 0.6em;
+        margin-top: 7vh;
+    }
+}
+
+@media screen and (max-width: 490px) {
+
+    /* countryDetails */
+    .countryDetails {
+        margin-left: 0;
+        width: 20vw;
+    }
+
+    /* countryNews */
+    .countryNewsContainer {
+        width: 80%;
+        height: 30vh;
+        margin-right: 10vw;
+    }
+
+
+    .countryNewsHeader {
+        right: 20vw;
+        width: 55%;
+    }
+
+    .countryNewsSnippet {
+        height: 28vh;
+        right: 2vw;
+    }
+
+    .goToCountryNews {
+       top: 38vh;
+        right: 36vw;
+     }
+
+/* Valuta */
+
+    .valutaCalculator {
+        height: 40vh;
+    }
+
+    .calculateValuta {
+        margin-top: 7vh;
+    }
+
+    .calculatedValutaResult {
+        padding: 1em;
+        font-size: 1.2em;
+        margin-top: 5vh;
+    }
+
+
+}
+
+@media screen and (max-width: 380px) {
+
 }

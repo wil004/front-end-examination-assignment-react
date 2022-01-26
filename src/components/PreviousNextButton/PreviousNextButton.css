@@ -1,4 +1,4 @@
-.PreviousNextButtonContainerNews {
+.previousNextButtonContainerNews {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,6 +20,7 @@
     cursor: pointer;
 }
 
+
 .NextButtonChooseCountry {
     color: white;
     background-color: rgba(0,0,0, 0.7);
@@ -39,64 +40,203 @@
 }
 
 
-.PreviousButton {
+.previousButtonNewsPage {
     cursor: pointer;
     width: 4%;
     height: 35vh;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border: none;
-    font-size: 1.6em;
-    color: rgba(100,100,100, 1);
-    font-weight: bold;
-    background-color: rgba(0,0,0, 0.5);
-    margin-top: 12vh;
-}
-
-.PreviousButtonDisabled {
-    width: 4%;
-    height: 35vh;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border: none;
-    font-size: 1.6em;
-    color: rgba(100,100,100,0.5);
-    font-weight: bold;
-    background-color: rgba(0,0,0, 0.1);
-    margin-top: 12vh;
-}
-
-.NextButton {
-    cursor: pointer;
-    width: 4%;
-    height: 35vh;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
     border: none;
     font-size: 1.2em;
     color: rgba(100,100,100, 1);
     font-weight: bold;
     background-color: rgba(0,0,0, 0.5);
-    margin-top: 12vh;
+    margin-top: 8vh;
 }
 
-.NextButtonDisabled {
+.previousButtonNewsPage:disabled {
     width: 4%;
     height: 35vh;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    font-size: 1.6em;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    border: none;
+    font-size: 1.2em;
+    color: rgba(100,100,100,0.5);
+    font-weight: bold;
+    background-color: rgba(0,0,0, 0.1);
+    margin-top: 8vh;
+    cursor: not-allowed;
+}
+
+.previousButtonNewsPage:disabled:hover {
+    color: rgba(100,100,100,0.5);
+}
+
+.previousButtonNewsPage:hover {
+    color: rgba(255,255,0, 0.8);
+}
+
+.nextButtonNewsPage {
+    cursor: pointer;
+    width: 4%;
+    height: 35vh;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border: none;
+    font-size: 1.2em;
+    color: rgba(100,100,100, 1);
+    font-weight: bold;
+    background-color: rgba(0,0,0, 0.5);
+    margin-top: 8vh;
+}
+
+.nextButtonNewsPage:disabled {
+    width: 4%;
+    height: 35vh;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    font-size: 1.2em;
     color: rgba(100,100,100, 0.5);
     font-weight: bold;
     border: none;
     background-color: rgba(0,0,0, 0.1);
-    margin-top: 12vh;
+    margin-top: 8vh;
+    cursor: not-allowed;
 }
 
-.NextButton:hover {
+.nextButtonNewsPage:disabled:hover {
+    color: rgba(100,100,100, 0.5);
+}
+
+.nextButtonNewsPage:hover {
     color: rgba(255,255,0, 0.8);
 }
 
-.PreviousButton:hover {
-    color: rgba(255,255,0, 0.8);
+.holidayPrevious {
+    border: none;
+    background-color: rgba(15,40,45, 0.8);
+    cursor: pointer;
+    height: 4em;
+    border-radius: 0 5em 5em 0;
+}
+
+.holidayNext {
+    border: none;
+    background-color: rgba(15,40,45, 0.8);
+    cursor: pointer;
+    height: 4em;
+    border-radius: 5em 0 0 5em;
+}
+
+.holidayPrevious:hover {
+    color: yellow;
+}
+
+.holidayNext:hover {
+    color: yellow;
+}
+
+.holidayPrevious:disabled {
+    cursor: not-allowed;
+    color: gray;
+}
+
+.holidayNext:disabled {
+    cursor: not-allowed;
+    color: gray;
+}
+
+
+.previousButtonCountryNews {
+    height: 10vh;
+    margin-top: 15vh;
+    margin-bottom: 3vh;
+    background-color: rgba(0,0,0, 0.75);
+    cursor: pointer;
+    border-radius: 0 1em 1em 0;
+}
+
+.nextButtonCountryNews {
+    height: 10vh;
+    margin-top: 15vh;
+    margin-bottom: 3vh;
+    background-color: rgba(0,0,0, 0.75);
+    cursor: pointer;
+    border-radius: 1em 0 0 1em;
+}
+
+.previousButtonCountryNews:hover {
+    color: yellow;
+}
+
+.nextButtonCountryNews:hover {
+    color: yellow;
+}
+
+.previousButtonCountryNews:disabled {
+    cursor: not-allowed;
+    color: gray;
+}
+
+
+.nextButtonCountryNews:disabled {
+    cursor: not-allowed;
+    color: gray;
+}
+
+@media screen and (max-width: 760px) {
+    .previousButtonNewsPage {
+        margin-top: 14vh;
+        height: 20vh;
+    }
+
+    .previousButtonNewsPage:disabled {
+        margin-top: 14vh;
+        height: 20vh;
+    }
+
+    .nextButtonNewsPage {
+        margin-top: 14vh;
+        height: 20vh;
+    }
+
+    .nextButtonNewsPage:disabled {
+        margin-top: 14vh;
+        height: 20vh;
+    }
+
+}
+
+@media screen and (max-width: 490px) {
+    /* newsPage */
+
+    .previousButtonNewsPage {
+        margin-top: 10vh;
+        height: 20vh;
+    }
+
+    .previousButtonNewsPage:disabled {
+        margin-top: 10vh;
+        height: 20vh;
+    }
+
+    .nextButtonNewsPage {
+        margin-top: 10vh;
+        height: 20vh;
+    }
+
+    .nextButtonNewsPage:disabled {
+        margin-top: 10vh;
+        height: 20vh;
+    }
+
+    /* countryPage */
+    .previousButtonCountryNews {
+        margin-top: 12vh;
+    }
+
+    .nextButtonCountryNews {
+        margin-top: 12vh;
+    }
+
 }

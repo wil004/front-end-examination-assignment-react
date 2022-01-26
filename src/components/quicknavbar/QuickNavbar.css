@@ -1,0 +1,88 @@
+.quickNavigationNews {
+   max-width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.quickNavigationContinents {
+    max-width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.continentNavButton {
+    color: white;
+    background-color: rgba(0,0,0, 0.7);
+    border-radius: 1vw;
+    height: 3vh;
+    font-size: 0.6em;
+    margin: 0.8em;
+    cursor: pointer;
+    width: 10em;
+}
+
+.newsNavButton {
+    color: white;
+    background-color: rgba(0,0,0, 0.7);
+    border-radius: 1vw;
+    height: 3vh;
+    font-size: 0.8em;
+    margin: 0.8em;
+    cursor: pointer;
+    width: 10em;
+}
+
+
+
+@media screen and (max-width: 1080px){
+  .continentNavigation {
+      width: 100%;
+  }
+
+    .continentNavButton {
+        font-size: 1em;
+        margin: 0.1em;
+    }
+
+    .newsNavigation {
+        font-size: 1em;
+        margin: 0.75em;
+    }
+}
+
+@media screen and (max-width: 760px){
+    .quickNavigation {
+        width: 100%;
+    }
+
+    .continentNavButton {
+        font-size: 1em;
+        margin: 0.1em;
+    }
+
+    .newsNavButton {
+        font-size: 0.8em;
+        margin: 0.75em;
+    }
+}
+
+@media screen and (max-width: 490px){
+    .quickNavigation {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .continentNavButton {
+        font-size: 1em;
+        margin: 0;
+    }
+
+    .newsNavButton {
+        font-size: 1.3em;
+        margin: 0.75em;
+    }
+}

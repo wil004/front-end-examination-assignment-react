@@ -1,5 +1,5 @@
 #countryPage {
-    top: 60px;
+    top: 6vh;
     position: relative;
     text-align: center;
 }
@@ -113,11 +113,20 @@
 
 .chooseCountrySearch {
     height: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: rgba(173,213,230, 0.5);
     font-family: "Agency FB";
+    margin: 0;
+}
+.noCountriesFound {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-color: rgba(72,203,225,0.8);
+    margin-top: 4vh;
+}
+
+.noCountriesFound h1 {
+    margin: 5vh auto;
+    color: red;
+    font-size: 3em;
 }
 
 .continentName {
