@@ -1,26 +1,27 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import './News.css'
-import PreviousNextButton from "../../components/PreviousNextButton/PreviousNextButton";
-import HomeNewsDots from "../../components/homeNewsDots/HomeNewsDots";
 import SearchBar from "../../components/searchbar/Searchbar";
-import {useHistory, useParams} from "react-router-dom";
-import timeCalculator from "../../helpers/TimeCalculator";
+import {NavLink, useHistory, useParams} from "react-router-dom";
+import timeCalculator from "../../helpers/timeCalculator";
 import QuickNavbar from "../../components/quicknavbar/QuickNavbar";
 import NewsContainer from "../../components/newscontainer/NewsContainer";
 import clock from "../../assets/clock.gif"
 import loadingSign from "../../assets/loading.gif"
 
-function News ({countries, setNavData}) {
-
+function News({countries, setNavData}) {
     const [news, setNews] = useState([]);
     const [topNews, setTopNews] = useState([]);
     const [userInput, setUserInput] = useState('');
     const [error, toggleError] = useState(false);
+    const [wrongPageError, toggleWrongPageError] = useState(false);
+
     const [loading, toggleLoading] = useState(false);
     const [loading2, toggleLoading2] = useState(false);
 
-    const newsToken = 'ct8nK1YSjbQaodqF9QpRKggxZXeRbHzVuWxRS8IY'
+    const newsToken = process.env.REACT_APP_API_KEY_NEWS
+
+
 
     const categories = ['general', 'sports', 'politics', 'food', 'travel', 'tech'];
     const {category, country} = useParams();
@@ -30,7 +31,8 @@ function News ({countries, setNavData}) {
         return item === category.toLowerCase();
     });
     const countryNames = countries.map((item) => {
-        return item.name});
+        return item.name
+    });
     countryNames.push('world');
 
     const chosenCountryObject = countries.find((item) => {
@@ -46,7 +48,6 @@ function News ({countries, setNavData}) {
     });
 
 
-
     let allCalculatedTimes;
     if (chosenCountryObject) {
         allCalculatedTimes = timeCalculator(chosenCountryObject.timezones);
@@ -55,9 +56,15 @@ function News ({countries, setNavData}) {
 
     useEffect(() => {
         toggleLoading(true);
+        if (!chosenCountry || !chosenCategory) {
+            toggleWrongPageError(true);
+        } else {
+            toggleWrongPageError(false);
+        }
+
         async function fetchData() {
             try {
-                const result = await axios.get(`https://api.thenewsapi.com/v1/news/top?language=en&api_token=${newsToken}`);
+                const result = await axios.get(`https://api.thenewsapi.com/v1/news/top?language=en&search=${chosenCountry}&api_token=${newsToken}`);
                 setTopNews(result.data.data);
             } catch (e) {
                 console.error(e);
@@ -65,19 +72,25 @@ function News ({countries, setNavData}) {
             }
             toggleLoading(false);
         }
-        fetchData();
-    }, [])
+        if(chosenCountry) {
+         fetchData();
+}
+    }, [chosenCountry])
 
-    {console.log(topNews)}
 
     useEffect(() => {
         toggleError(false);
         toggleLoading2(true);
-        setNavData(chosenCategory.charAt(0).toUpperCase() + chosenCategory.slice(1) + ' ' + chosenCountry.charAt(0).toUpperCase() + chosenCountry.slice(1))
+        if (chosenCountry && chosenCategory) {
+            setNavData(chosenCategory.charAt(0).toUpperCase() + chosenCategory.slice(1) + ' ' + chosenCountry.charAt(0).toUpperCase() + chosenCountry.slice(1))
+        }
         async function fetchData() {
             try {
                 const result = await axios.get(`https://api.thenewsapi.com/v1/news/all?api_token=${newsToken}&language=en&search=${chosenCountry}&categories=${chosenCategory.toLowerCase()}`)
                 setNews(result.data.data);
+                if (result.data.data.length === 0) {
+                    toggleError('No news available for this country and category');
+                }
             } catch (e) {
                 toggleError(e.response.data.error.message);
                 console.error(e);
@@ -85,43 +98,50 @@ function News ({countries, setNavData}) {
             }
             toggleLoading2(false);
         }
-
+        if (chosenCountry && chosenCategory) {
         fetchData()
+}
     }, [chosenCategory, chosenCountry])
+
+    {console.log(news)}
 
 
     return <>
-        {chosenCountry &&
+        {!chosenCountry || !chosenCategory ? wrongPageError && <h1 className="wrongPageNewsError">This page doesn't exist please go back to the <NavLink to='/news/general/world'>main page
+             here
+        </NavLink></h1> :
         <main className="newsPage">
-                <article className="newsPageBox">
-                    <section className="popularNews" >
-                        {!loading && <h1>Top News</h1>}
-                        {loading ?
-                            <div>
-                                <h2>...Loading</h2>
-                            </div>
-                            :
-                            topNews.length > 0 ?
+            <article className="newsPageBox">
+
+                <section className="popularNews">
+                    {!loading && <h1>Top News</h1>}
+                    {loading ?
+                        <div>
+                            <h2>...Loading</h2>
+                        </div>
+                        :
+                        topNews.length > 0 ?
                             <div className="popularNewsItem">
                                 {topNews.map((item) => {
-                                    return(
-                                        <a href={item.url} target="_blank" className="popularNewsItemFlex" key={item.uuid}>
-                                                <img src={item.image_url} className="popularNewsImage" />
-                                                <p>{item.description}</p>
+                                    return (
+                                        <a href={item.url} target="_blank" className="popularNewsItemFlex"
+                                           key={item.uuid}>
+                                            <img src={item.image_url} className="popularNewsImage"/>
+                                            <p>{item.description}</p>
                                         </a>
-                                        )
+                                    )
                                 })}
                             </div>
-                                :
-                                error &&
-                                <div>
-                                    <h2>Something went wrong!</h2>
-                                </div>
-                                }
-                    </section>
-                    {loading2 ? <img className="loadingNews" src={loadingSign} />
-                        :
-                        news.length > 0 ?
+                            :
+                            error &&
+                            <div>
+                                <h2>Something went wrong!</h2>
+                            </div>
+                    }
+                </section>
+                {loading2 ? <img className="loadingNews" src={loadingSign}/>
+                    :
+                    news.length > 0 ?
                         <section className="newsPageSection">
                             <SearchBar
                                 className="searchbarInputNewsPage"
@@ -129,16 +149,25 @@ function News ({countries, setNavData}) {
                                 setUserInput={setUserInput}
                                 countries={countries}
                                 disabled={!countryNames.includes(userInput)}
-                                onClick={() => {history.push(`/news/general/${userInput}`); setUserInput('');}}
-                                newsPage={<div className={userInput.length === 0 ?  "noStyleSearchOptions" : "searchOptions"}>
+                                onClick={() => {
+                                    history.push(`/news/general/${userInput}`);
+                                    setUserInput('');
+                                }}
+                                newsPage={<div
+                                    className={userInput.length === 0 ? "noStyleSearchOptions" : "searchOptions"}>
                                     {chosenCountryUserInput.map((item) => {
-                                        if(countryNames.includes(userInput)) {
-                                            {console.log('When a valid country name is in the input field the dropdownmenu should dissapear!')}
-                                        }
-                                        else if (userInput.length > 0) {
+                                        if (countryNames.includes(userInput)) {
+                                            {
+                                                console.log('When a valid country name is in the input field the dropdownmenu should dissapear!')
+                                            }
+                                        } else if (userInput.length > 0) {
                                             return <p key={item.name}>
-                                                <button onClick={() => {setUserInput(item.name) }}>
-                                                    <img src={item.flag} width="25" height="25" />{item.name}</button></p>
+
+                                                   <button onClick={() => {
+                                                    setUserInput(item.name)
+                                                }}>
+                                                    <img src={item.flag} width="25" height="25"/>{item.name}</button>
+                                            </p>
                                         }
                                     })} </div>}
                             />
@@ -151,54 +180,57 @@ function News ({countries, setNavData}) {
                                 classNameNavButton="newsNavButton"
                                 quickNavClassName={"quickNavigationNews"}
                             />
-                        <NewsContainer
-                            news={news}
-                            classNameNewsContainer="newsPageDiv"
-                            classNamePrevious="previousButtonNewsPage"
-                            classNameNext="nextButtonNewsPage"
-                            newsHeaderClass="newsHeader"
-                            newsSnippetClass="newsSnippet"
-                            goToButton="goToNews"
-                            classNameDots="homeNewsDots"
-                        />
+                            <NewsContainer
+                                news={news}
+                                classNameNewsContainer="newsPageDiv"
+                                classNamePrevious="previousButtonNewsPage"
+                                classNameNext="nextButtonNewsPage"
+                                newsHeaderClass="newsHeader"
+                                newsSnippetClass="newsSnippet"
+                                goToButton="goToNews"
+                                classNameDots="homeNewsDots"
+                            />
                         </section>
-                            :
+                        :
                         error &&
-                            <div>
-                                <h1>Oops... Something went wrong!</h1>
-                                <p>{error}</p>
-                            </div>
-                            }
-
-                    <section className="timeZone">
-                        {allCalculatedTimes ?
-                            <div>
-                        <h1>Time zone(s): {chosenCountry}</h1>
-                        <p>(with colonies)</p>
-                        <div className={allCalculatedTimes.length > 1 ? "timeZoneGrid" : "noGrid"}>
-                            <img src={chosenCountryObject.flag} className="timeCountry" />
-                            <img src={clock} className="timeClock"/>
-
-                            {allCalculatedTimes.map((item) => {
-                                    return <h2 key={chosenCountry + item}>{item}</h2>
-                                }
-                            )}
+                        <div>
+                            <h1>Oops... Something went wrong!</h1>
+                            <p>{error}</p>
                         </div>
-                            </div> :
-                            <div><h1>World Timezones</h1>
-                                <p>To see the timezones choose a country.</p>
+                }
+                {country.toLowerCase() !== "world" && <button className="goBackToWorldNews" onClick={() => {
+                    history.push(`/news/${category}/world`)
+                }}>
+                    Go back to world news</button>}
+                <section className="timeZone">
+                    {allCalculatedTimes ?
+                        <div>
+                            <h1>Time zone(s): {chosenCountry}</h1>
+                            <p>(with colonies)</p>
+                            <div className={allCalculatedTimes.length > 1 ? "timeZoneGrid" : "noGrid"}>
+                                <img src={chosenCountryObject.flag} className="timeCountry"/>
+                                <img src={clock} className="timeClock"/>
+
+                                {allCalculatedTimes.map((item, index) => {
+                                        return <h2 key={chosenCountry + index}>{item}</h2>
+                                    }
+                                )}
+                            </div>
+                        </div> :
+                        <div><h1>World Timezones</h1>
+                            <p>To see the timezones choose a country.</p>
                             <p>You can easily find countries in the searchbar!</p>
-                            <p>By typing in a random letter a list of countries starting with that letter will appear!</p>
-                                <img src={clock}
-                                     className="timeClock"/>
-                            </div>}
-                    </section>
-                 </article>
+                            <p>By typing in a random letter a list of countries starting with that letter will
+                                appear!</p>
+                            <img src={clock}
+                                 className="timeClock"/>
+                        </div>}
+                </section>
+            </article>
 
 
-
-        </main> }
-        </>
+        </main>}
+    </>
 }
 
 export default News

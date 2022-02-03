@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+** THE COUNTRY NEWS GUIDE **
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+** Handleiding werking applicatie **
 
-## Available Scripts
+De country news guide is een applicatie die het mogelijk maakt om nieuws te filteren op categorie en land.
 
-In the project directory, you can run:
+Dit kan op de news page of op de country page.
 
-### `npm start`
+Om deze pagina's te kunnen bereiken zal een gebruiker zich moeten registreren.
+Dit kan op de registratie pagina.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Als dit geslaagd is krijg je een bericht van goedmelding en zal je worden ge-redirect naar de login pagina.
+Hier kan je inloggen met je nieuwe account (of al bestaande account als je je eerder had geregistreerd) waarop je 
+toegang krijgt tot de profile page, choose country page, news page en de country page.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Er zal wel genavigeerd moeten worden naar de country page door een land te kiezen op de choose country page.
 
-### `npm test`
+Op de nieuws page kan de gebruiker nieuws filteren op algemene categorieen (denk aan sport, politiek etc.).
+Het is op de nieuws page ook mogelijk om de categorieen op land te filteren door het land op te zoeken in de zoekbalk
+en vervolgens op search te klikken.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![](src/assets/newspage.png)
+De news page.
+_______________
 
-### `npm run build`
+Op de country page kan een gebruiker bepaalde statistieken inzien van een land.
+Denk bijvoorbeeld aan populatie en munteenheden.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ook is het mogelijk om de munteenheden van een land om te rekenen met de valuta calculator.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+De categorieen die gekozen kunnen worden op de country page hebben met het gekozen land te maken.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Je zou bijvoorbeeld kunnen zoeken naar nieuws over de valuta of nieuws over de hoofdstad en meer.
 
-### `npm run eject`
+Ook hebben sommige landen een talen optie om nieuws te bekijken in de taal van het door de gebruiker gekozen land.
+Dit zie je dan rechtsboven in de pagina bij het kopje language.
+Is deze niet aanwezig dan is er dus ook geen talenoptie.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+(Je kan filteren op landen met een talenoptie op de choose country pagina hier kun je heen navigeren door op de navbar op countries te klikken. 
+Ook kun je hier landen filteren op continent.)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![](src/assets/countrypage.png)
+De country page van duitsland (germany) dit land heeft een talenoptie.
+__________________________________________
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+** Benodigdheden om de applicatie te runnen **
+- De api keys van https://www.thenewsapi.com/ en https://www.abstractapi.com/(holiday en currency).
+_____________________________________________
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+** Handleiding om de applicatie te runnen **
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Het is eigenlijk erg eenvoudig om deze applicatie te runnen.
 
-### Code Splitting
+Je cloned dit project in een gekozen map via git bash (git clone url-van-project) en opent het met een code editor zoals bijv. webstorm.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Vervolgens typ je 'npm install' in de terminal en druk je op enter.
+Alle packages/dependencies die bij de applicatie horen worden dan gedownload.
 
-### Analyzing the Bundle Size
+Dan maak je een .env bestand aan en vul je hier de bijbehorende api keys in.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+REACT_APP_API_KEY_NEWS=*newsapi*
+REACT_APP_API_KEY_HOLIDAYS=*holidayapi*
+REACT_APP_API_KEY_CURRENCIES=*currencyapi*
 
-### Making a Progressive Web App
+Nadat je dit gedaan hebt vul je 'npm start' in, in de terminal en dan druk je op enter en kan de applicatie opgestart worden.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Voor de eindexamenopdracht zal ik de api keys in een txt file genaamd keys stoppen.
+Hier zal ik data inzetten die meteen gekopieerd en geplakt kan worden in het .env bestand.
+Doe dit wel voordat je npm start intikt anders moet de applicatie opnieuw opgestart worden.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -2,7 +2,7 @@ import React from "react";
 import {useHistory} from "react-router-dom";
 import './QuickNavbar.css'
 
-function QuickNavbar ({setNavData, setUserInput, array, url1, url3, classNameNavButton, quickNavClassName, redirect}) {
+function QuickNavbar ({setNavData, setUserInput, array, url1, url3, classNameNavButton, quickNavClassName}) {
 
 const history = useHistory();
 
@@ -38,7 +38,6 @@ const history = useHistory();
             {array.length > 18 && <button onClick={() => {setNavData(array[18]); history.push(`/${url1}/${array[18]}/${url3}`); setUserInput('');}} className={classNameNavButton}>{array[18].charAt(0).toUpperCase() + array[18].slice(1)}</button>}
             {array.length > 19 && <button onClick={() => {setNavData(array[19]); history.push(`/${url1}/${array[19]}/${url3}`); setUserInput('');}} className={classNameNavButton}>{array[19].charAt(0).toUpperCase() + array[19].slice(1)}</button>}
             {array.length > 20 && <button onClick={() => {setNavData(array[20]); history.push(`/${url1}/${array[20]}/${url3}`); setUserInput('');}} className={classNameNavButton}>{array[20].charAt(0).toUpperCase() + array[20].slice(1)}</button>}
-            {redirect}
         </div>
     )
 

@@ -96,7 +96,7 @@
     color: #eedc71;
     width: 50%;
     margin: 1em auto;
-    font-family: Ebrima;
+    font-family: Ebrima sans-serif;
     border-radius: 1em;
 }
 
@@ -151,9 +151,9 @@
 
 .newsSnippet {
     background-color: rgba(0,0,0, 0.8);
-    width: 45vw;
+    width: 42vw;
     padding: 0.5vh 0.5vw;
-    margin: 3.5vh auto 1.5vh auto;
+    margin: 5vh auto 1.5vh auto;
     border-radius: 1em;
     color: white;
     text-align: center;
@@ -185,6 +185,28 @@
     pointer-events: none;
 }
 
+.goBackToWorldNews {
+    position: absolute;
+    right: 0;
+    font-size: 1em;
+    top: 0.7em;
+    color: white;
+    background-color: rgba(0,0,140,0.8);
+    cursor: pointer;
+    border-radius: 1em 0 0 1em;
+}
+
+.goBackToWorldNews:hover {
+    color: yellow;
+}
+
+.wrongPageNewsError {
+    color: red;
+    position: absolute;
+    top: 30vh;
+    background-color: black;
+}
+
 @media screen and (min-width: 2100px) {
 
 
@@ -196,15 +218,8 @@
 
     .newsHeader h5{
         position: absolute;
-        left: 30%;
+        left: 27.5%;
     }
-
-
-
-
-
-
-
 }
 
 @media screen and (min-width: 2400px) {

@@ -1,44 +1,9 @@
+/* news page */
 .previousNextButtonContainerNews {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-.PreviousNextButtonContainerChooseCountry {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.PreviousButtonChooseCountry {
-    color: white;
-    background-color: rgba(0,0,0, 0.7);
-    width: 8vw;
-    height: 3vh;
-    border-top-left-radius: 40em;
-    border-bottom-left-radius: 5em;
-    cursor: pointer;
-}
-
-
-.NextButtonChooseCountry {
-    color: white;
-    background-color: rgba(0,0,0, 0.7);
-    width: 8vw;
-    height: 3vh;
-    border-top-right-radius: 40em;
-    border-bottom-right-radius: 5em;
-    cursor: pointer;
-}
-
-.NextButtonChooseCountry:disabled {
-    cursor: not-allowed;
-}
-
-.PreviousButtonChooseCountry:disabled {
-    cursor: not-allowed;
-}
-
 
 .previousButtonNewsPage {
     cursor: pointer;
@@ -111,6 +76,46 @@
 .nextButtonNewsPage:hover {
     color: rgba(255,255,0, 0.8);
 }
+
+/* choose country page */
+
+.PreviousNextButtonContainerChooseCountry {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.PreviousButtonChooseCountry {
+    color: white;
+    background-color: rgba(0,0,0, 0.7);
+    width: 8vw;
+    height: 3vh;
+    border-top-left-radius: 40em;
+    border-bottom-left-radius: 5em;
+    cursor: pointer;
+}
+
+
+.NextButtonChooseCountry {
+    color: white;
+    background-color: rgba(0,0,0, 0.7);
+    width: 8vw;
+    height: 3vh;
+    border-top-right-radius: 40em;
+    border-bottom-right-radius: 5em;
+    cursor: pointer;
+}
+
+.NextButtonChooseCountry:disabled {
+    cursor: not-allowed;
+}
+
+.PreviousButtonChooseCountry:disabled {
+    cursor: not-allowed;
+}
+
+
+/* country page */
 
 .holidayPrevious {
     border: none;

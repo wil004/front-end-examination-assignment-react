@@ -15,12 +15,16 @@ function ChooseCountry ({countries, setNavData, navData}) {
     const [continents, setContinents] = useState('');
     const [searchCountry, setSearchCountry] = useState([]);
 
-    const continentType = ['world', 'oceania', 'asia', 'europe', 'north-america', 'south-america','africa'];
+    const continentType = ['world', 'oceania', 'asia', 'europe', 'north-america', 'south-america','africa', 'language-option'];
+    const availableLanguages = ['ar', 'bg', 'bn', 'cs', 'da', 'de','el','en','es','fa','fi','fr', 'he', 'hi',
+        'hr', 'hu','id', 'it', 'ja', 'ko', 'lt', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sk', 'sv', 'ta', 'th', 'tr',
+        'uk', 'zh']
+
     const {continent, pageId} = useParams();
     const history = useHistory();
     const chosenContinent = continentType.find((item) => {
         return item === continent.toLowerCase();
-    })
+    });
 
 
     let page = + pageId;
@@ -32,15 +36,17 @@ function ChooseCountry ({countries, setNavData, navData}) {
         return page = page - 1;
     }
 
-    if(countries.length > 0) {
-        countries.sort((a, b) => {
+
+        const sortedCountries = countries.sort((a, b) => {
             return b.population - a.population;
         })
-    }
+
+
+    {console.log(countries)}
 
     useEffect(() => {
         if (continents === false) {
-            setContinents(countries)
+            setContinents(sortedCountries)
         }
         setNavData(chosenContinent.charAt(0).toUpperCase() + chosenContinent.slice(1))
         setContinents(countries.filter((item) => {
@@ -51,6 +57,8 @@ function ChooseCountry ({countries, setNavData, navData}) {
                 return (item.subregion === 'Northern America')
              } else if (chosenContinent === 'south-america') {
                 return (item.subregion === 'South America')
+            } else if (chosenContinent === 'language-option') {
+                return availableLanguages.includes(item.alpha2Code.toLowerCase())
             }
             else {
                 return (item.region === chosenContinent.charAt(0).toUpperCase() + chosenContinent.slice(1))
@@ -64,7 +72,7 @@ function ChooseCountry ({countries, setNavData, navData}) {
                 return (item.name.charAt(0) === userInput.charAt(0)) && item.name.includes(userInput);
             }));
         }
-    }, [userInput])
+    }, [userInput]);
 
 
 
@@ -116,7 +124,7 @@ function ChooseCountry ({countries, setNavData, navData}) {
                 if (index < page * 16 && index >= (page - 1) * 16) {
                         return (
                        <div key={item.name + index}>
-                       <NavLink className="countryNavContainer" to={`/countrypage/${item.alpha3Code}`}>
+                       <NavLink className="countryNavContainer" to={`/countrypage/${item.alpha3Code}/${item.capital}`}>
                             <div className="chooseCountries" key={item.name}>
                                 {index === countryNameHover && item.name.length > 20 && <button disabled="disabled" className="countryNameHover">{item.name}</button>}
                                 <button disabled="disabled" className={"chooseCountryNameHeader"}>{item.name.length > 20 ? item.name.split(' ')[0] + ' ' +
@@ -146,7 +154,7 @@ function ChooseCountry ({countries, setNavData, navData}) {
             }) : searchCountry.map((item, index) => {
             return (
                 <div key={item.name + index}>
-                    <NavLink className="countryNavContainer" to={`/countrypage/${item.alpha3Code}`}>
+                    <NavLink className="countryNavContainer" to={`/countrypage/${item.alpha3Code}/${item.continent}`}>
                         <div className="chooseCountries" key={item.name}>
                             {index === countryNameHover && item.name.length > 20 && <button disabled="disabled" className="countryNameHover">{item.name}</button>}
                             <button disabled="disabled" className={"chooseCountryNameHeader"}>{item.name.length > 20 ? item.name.split(' ')[0] + ' ' +

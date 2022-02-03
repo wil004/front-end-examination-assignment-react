@@ -1,12 +1,23 @@
+/* news page */
+
 .homeNewsDots {
     display: flex;
     justify-content: center;
     margin-top: 1.5em;
     width: 100%;
 }
+
+/* country page */
+
+
 .homeCountryDots {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2.25em auto
 }
+
+/* direct in the component */
 
 .homeNewsDotButton {
     height: 1vh;
@@ -16,6 +27,10 @@
     margin: 0 1em 0 1em;
 }
 
+.homeNewsDotButton:disabled {
+    cursor: not-allowed;
+}
+
 #homeNewsDotButtonClicked {
     height: 1vh;
     width: 1vw;
@@ -23,6 +38,19 @@
     cursor: pointer;
     background-color: black;
 }
+
+
+@media screen and (min-width: 1900px) {
+
+    .homeCountryDots {
+        display: flex;
+        justify-content: center;
+        margin-top: 2.25em;
+        width: 35vw;
+    }
+}
+
+
 
 @media screen and (max-width: 1080px) {
 

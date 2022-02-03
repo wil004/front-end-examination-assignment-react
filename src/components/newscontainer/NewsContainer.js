@@ -4,7 +4,6 @@ import HomeNewsDots from "../homeNewsDots/HomeNewsDots";
 
 function NewsContainer ({news, classNameNewsContainer, classNamePrevious, classNameNext, newsSnippetClass, newsHeaderClass, goToButton, classNameDots}) {
     const [newsNumber, setNewsNumber] = useState(0);
-
     return (
         <div className={classNameNewsContainer} style={{backgroundImage: `url(${news[newsNumber].image_url})`,
             backgroundSize: `100% 100%`}} >
@@ -20,13 +19,17 @@ function NewsContainer ({news, classNameNewsContainer, classNamePrevious, classN
                 classNameNext={classNameNext}
                 className={"previousNextButtonContainerNews"}
             />
-
-            <HomeNewsDots
+                <HomeNewsDots
                 onClickFirst={() => { setNewsNumber(0);}}
                 onClickSecond={() => { setNewsNumber(1);}}
                 onClickThird={() => {setNewsNumber(2)}}
                 onClickFourth={() => {setNewsNumber(3)}}
                 onClickFifth={() => {setNewsNumber(4)}}
+                disabled={news.length < 1}
+                disabled2={news.length < 2}
+                disabled3={news.length < 3}
+                disabled4={news.length < 4}
+                disabled5={news.length < 5}
                 className={classNameDots}
                 first={newsNumber === 0 ? 'homeNewsDotButtonClicked' : 'false1'}
                 second={newsNumber === 1 ? 'homeNewsDotButtonClicked' : 'false2'}
