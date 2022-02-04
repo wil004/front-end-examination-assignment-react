@@ -140,7 +140,6 @@ function AuthContextProvider({children}) {
             },
             isAuth: false
         });
-        window.location.reload();
     }
 
 
