@@ -15,6 +15,8 @@ function Home({setNavData}) {
     useEffect(() => {
         if (auth.isAuth) {
             setNavData('Home')
+        } else {
+            setNavData(`William's News Application`)
         }
     }, [])
 
