@@ -61,7 +61,9 @@ Alle packages/dependencies die bij de applicatie horen worden dan gedownload.
 Dan maak je een .env bestand aan en vul je hier de bijbehorende api keys in.
 
 REACT_APP_API_KEY_NEWS=*newsapi*
+
 REACT_APP_API_KEY_HOLIDAYS=*holidayapi*
+
 REACT_APP_API_KEY_CURRENCIES=*currencyapi*
 
 Nadat je dit gedaan hebt vul je 'npm start' in, in de terminal en dan druk je op enter en kan de applicatie opgestart worden.
