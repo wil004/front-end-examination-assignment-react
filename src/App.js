@@ -2,7 +2,7 @@ import React, {useEffect, useState, useContext} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import axios from "axios";
 import './App.css';
-import Navbar from "./components/navbar/navbar";
+import Navbar from "./components/navbar/Navbar";
 import PrivateRoute from "./components/privateroute/PrivateRoute";
 import Home from "./pages/home/Home";
 import Login from "./pages/login-register/Login";
