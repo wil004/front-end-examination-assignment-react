@@ -1,0 +1,127 @@
+.calculateValuta {
+    margin-top: 4vh;
+    font-size: 1.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.valutaInput {
+    margin-left: 1vw;
+    display: flex;
+    align-items: center;
+}
+
+#valutaAmountInput {
+    margin-left: 2vw;
+    width: 10vw;
+}
+
+.exchangeImage {
+    width: 2em;
+    height: 2em;
+}
+
+#valutaAmountOutput {
+    margin-right: 1vw;
+    width: 10vw;
+}
+
+.valutaExchangeButton {
+    border-radius: 1em;
+    background-color: lightseagreen;
+    cursor: pointer;
+}
+
+
+.valutaOutput {
+    margin-right: 1vw;
+    display: flex;
+    align-items: center;
+}
+
+.errorMessageValutaCalculator {
+    color: red;
+    font-size: 1em;
+}
+
+
+.calculatedValutaResult {
+    font-size: 1em;
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    margin-top: 5vh;
+}
+
+.exchangeButtonP {
+    font-size: 0.8em;
+    margin: 0;
+}
+
+
+
+@media screen and (max-width: 1080px) {
+    /* valuta */
+
+    .calculateValuta {
+        margin-top: 2vh;
+    }
+
+    .calculatedValutaResult {
+        padding: 0.1em;
+        font-size: 0.9em;
+        margin-top: 3vh;
+    }
+
+
+}
+
+
+@media screen and (max-width: 760px) {
+    /* valuta */
+
+    .calculateValuta {
+        margin-top: 4vh;
+    }
+
+    #valutaAmountInput {
+        font-size: 0.7em;
+    }
+
+    #valutaAmountOutput {
+        font-size: 0.7em;
+    }
+
+    .inOutputLabel {
+        font-size: 0.7em;
+    }
+    .exchangeImage {
+        width: 3vw;
+        height: 3vh;
+    }
+
+
+
+    .calculatedValutaResult {
+        padding: 0.6em;
+        margin-top: 7vh;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .valutaCalculator {
+        height: 40vh;
+    }
+
+    .calculateValuta {
+        margin-top: 3vh;
+    }
+
+    .calculatedValutaResult {
+        padding: 1em;
+        font-size: 1.2em;
+        margin-top: 5vh;
+    }
+}

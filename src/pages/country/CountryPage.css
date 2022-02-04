@@ -1,0 +1,261 @@
+.chosenCountry {
+    position: relative;
+    top: 7.5vh;
+}
+
+.countryInformation {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.countryDetails {
+    margin-left: 0vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 38vw;
+    border-radius: 2em 2em 1em 1em;
+    background: linear-gradient(to bottom, rgba(101, 101, 101, 0.8), rgba(55, 55, 55,0.8), rgba(103, 103, 103, 0.8), rgba(42, 42, 42, 0.8));
+}
+
+.countryDetails h1 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    border-radius: 1em 1em 0 0;
+    background-color: black;
+    text-align: center;
+}
+
+.countryDetails p {
+    color: white;
+    font-size: 0.8em;
+    font-weight: 300;
+    margin: 0.5em;
+}
+
+.countryFlagImage {
+    margin-top: 0.5em;
+    width: 22.5vw;
+    height: 14vh;
+}
+
+.goToCountryNews:hover {
+    background-color: #1f938a;
+    cursor: pointer;
+    color: yellow;
+}
+
+
+.countryHolidaysAndValutaCalculator {
+    display: flex;
+    align-items: start;
+    margin-top: 5vh;
+}
+
+
+.languageSetupCountry {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: 2.5vh;
+    right: 0;
+    font-size: 1em;
+    background-color: rgba(0, 51, 73, 0.75);
+    width: 20vw;
+    height: 4.5vh;
+    border-radius: 0.5em 0 0 0.5em;
+}
+
+.languageSetupCountry p {
+    color: yellow;
+    font-weight: lighter;
+    border-radius: 0.2em;
+    font-size: 0.8em;
+}
+
+.languageSetupCountry img {
+    width: 2.5vw;
+    height: 2.5vh;
+}
+
+.languageSetupCountry button {
+    cursor: pointer;
+    margin: 0.3em;
+    background-color: rgba(0,0,140,0.7);
+    border-radius: 0.7em;
+    width: 5vw;
+    height: 3.5vh;
+}
+
+.languageSetupCountry button:hover {
+    background-color: rgba(255,255,0, 0.6);
+}
+
+.languageSetupCountry button:active {
+    background-color: #1f938a;
+}
+
+/* NewsContainer component below here */
+
+.countryNews {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4vh;
+    margin-top: 7vh;
+    margin-right: 5vw;
+}
+
+
+.countryNewsContainer {
+    width: 70%;
+    height: 35vh;
+    border-radius: 1em;
+    margin-right: 10vw;
+}
+
+.countryNewsHeader {
+    font-size: 0.8em;
+    position: absolute;
+    text-align: center;
+    right: 24.5vw;
+    width: 40%;
+    background-color: rgba(0,0,0, 0.9);
+    color: #ffffff;
+    font-family: "sans-serif";
+    font-weight: 600;
+    margin: 2vh 0 0 0;
+    border-radius: 0.5em;
+}
+
+.countryNewsHeader:hover {
+    color: yellow;
+}
+
+.countryNewsSnippet {
+    font-size: 0.65em;
+    background-color: rgba(0,0,0, 0.8);
+    position: absolute;
+    right: 5vw;
+    top: 4vh;
+    width: 12vw;
+    height: 35vh;
+    padding: 0.5vh 0.5vw;
+    margin: 3.5vh auto 1.5vh auto;
+    border-radius: 1em;
+    color: white;
+    text-align: center;
+}
+
+.goToCountryNews {
+    position: absolute;
+    right: 34vw;
+    width: 20%;
+    top: 43vh;
+    font-size: 0.9em;
+    padding: 4px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-weight: 300;
+}
+
+.countryPageLoading {
+    width: 25vw;
+    height: 25vh;
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 1900px) {
+    /* countryDetails */
+
+    .countryDetails {
+        margin-left: 5vw;
+    }
+
+    /* countryNews */
+
+    .countryNews {
+        margin-right: 5vw;
+    }
+
+    .goToCountryNews {
+        right: 32vw;
+        height: 3vh;
+        font-size: 1.2em;
+    }
+
+    .countryNewsContainer {
+        width: 55%;
+        height: 35vh;
+        border-radius: 1em;
+    }
+
+    .countryNewsHeader {
+        width: 35%;
+        right: 25.1vw;
+    }
+
+    /* countryHoliday */
+
+    .countryHolidays {
+        right: 5vw;
+        width: 30vw;
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 490px) {
+
+    /* countryDetails */
+    .countryDetails {
+        margin-left: 0;
+        width: 20vw;
+    }
+
+    /* countryNews */
+    .countryNewsContainer {
+        width: 80%;
+        height: 30vh;
+        margin-right: 10vw;
+    }
+
+
+    .countryNewsHeader {
+        right: 20vw;
+        width: 55%;
+    }
+
+    .countryNewsSnippet {
+        height: 28vh;
+        right: 2vw;
+    }
+
+    .goToCountryNews {
+       top: 38vh;
+        right: 36vw;
+     }
+
+
+
+}
+
+@media screen and (max-width: 380px) {
+
+}
