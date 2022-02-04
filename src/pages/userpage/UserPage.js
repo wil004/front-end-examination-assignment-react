@@ -17,15 +17,15 @@ function UserPage({setNavData}) {
         <main className="personalPage">
             {setAccount === 'setImage' ?
 
-                <ChangeProfile
+             <ChangeProfile
                     title={'Setup your profile picture'}
                     currentDetailsTitle={'Current profile picture'}
                     description={'You can setup your profile picture by filling in the image field below\n' +
                     '                with a Base64-String' +
                     'Make sure to copy Base64 Image source'}
-                    urlText={'You can convert your image to a base64-String on this website!'}
+                    urlText={'You can convert your image to a base64 image source String on this website!'}
                     url={'https://www.base64encoder.io/image-to-base64-converter/'}
-                    inputFieldDescription={'Put your base64-string in here'}
+                    inputFieldDescription={'Put your base64 IMAGE SOURCE -string in here'}
                     setNavData={setNavData}
                 />
 
