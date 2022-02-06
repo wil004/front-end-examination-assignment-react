@@ -5,8 +5,11 @@ import HomeNewsDots from "../homeNewsDots/HomeNewsDots";
 function NewsContainer ({news, classNameNewsContainer, classNamePrevious, classNameNext, newsSnippetClass, newsHeaderClass, goToButton, classNameDots}) {
     const [newsNumber, setNewsNumber] = useState(0);
     return (
-        <div className={classNameNewsContainer} style={{backgroundImage: `url(${news[newsNumber].image_url})`,
+        <div className={classNameNewsContainer} style={{
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            backgroundImage: `url(${news[newsNumber].image_url})`,
             backgroundSize: `100% 100%`}} >
+            <h1 className="errorMessageImage">Image is loading or did not load</h1>
             <a href={news[newsNumber].url} target="_blank" className={newsHeaderClass}>
                 <h5>{news[newsNumber].title}</h5>
             </a>
