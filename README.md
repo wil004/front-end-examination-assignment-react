@@ -58,7 +58,7 @@ Je cloned dit project in een gekozen map via git bash (git clone url-van-project
 Vervolgens typ je 'npm install' in de terminal en druk je op enter.
 Alle packages/dependencies die bij de applicatie horen worden dan gedownload.
 
-Dan maak je een .env bestand aan en vul je hier de bijbehorende api keys in.
+Dan maak je een .env bestand aan in de hoofdmap! en vul je hier de bijbehorende api keys in.
 
 REACT_APP_API_KEY_NEWS=*newsapi*
 
@@ -73,3 +73,5 @@ Hier zal ik data inzetten die meteen gekopieerd en geplakt kan worden in het .en
 Doe dit wel voordat je npm start intikt anders moet de applicatie opnieuw opgestart worden.
 
 
+
+**BESTAND OP GITHUB UPGEDATE OP 23.59 06-02-2022
