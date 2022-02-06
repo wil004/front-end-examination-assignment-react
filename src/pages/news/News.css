@@ -316,6 +316,14 @@
     }
 }
 
+.errorMessageImage {
+    position: absolute;
+    color: red;
+    z-index: -1;
+    top: 20vh;
+    left: 37vw;
+}
+
 @media screen and (max-width: 380px) {
     .popularNews {
         width: 28%;
