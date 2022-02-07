@@ -64,6 +64,37 @@ body {
   }
 }
 
+@media screen and (max-height: 850px){
+  body {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-height: 720px){
+  body {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-height: 640px){
+  body {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-height: 490px){
+  body {
+    font-size: 10px;
+  }
+}
+
+
+@media screen and (max-height: 320px){
+  body {
+    font-size: 8px;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
