@@ -75,3 +75,5 @@ Doe dit wel voordat je npm start intikt anders moet de applicatie opnieuw opgest
 
 
 **BESTAND OP GITHUB UPGEDATE OP 23.59 06-02-2022
+Het was mij na het inleveren opgevallen dat de hoogte niet responsive was.
+Dit heb ik opgelost door een paar kleine dingetjes aan de index.css toe te voegen!
