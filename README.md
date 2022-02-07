@@ -72,8 +72,3 @@ Voor de eindexamenopdracht zal ik de api keys in een txt file genaamd keys stopp
 Hier zal ik data inzetten die meteen gekopieerd en geplakt kan worden in het .env bestand.
 Doe dit wel voordat je npm start intikt anders moet de applicatie opnieuw opgestart worden.
 
-
-
-**BESTAND Index.css UPGEDATE OP 02:55 06-02-2022
-Het was mij na het inleveren opgevallen dat de hoogte niet responsive was.
-Dit heb ik opgelost door een paar kleine dingetjes aan de index.css toe te voegen!
